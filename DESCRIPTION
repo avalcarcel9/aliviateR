@@ -2,12 +2,24 @@ Package: aliviateR
 Version: 0.0.1
 Title: A package to automate my R workflow.
 Description: This package is a compilation of functions that make my life easier. It contains material to automate creating an R package using the workflow that I like with my information. It can be adapted to use my workflow with your information.
-Authors@R: Alessandra (Ali) M. Valcarcel <alval@pennmedicine.com> [aut, cre]
+Authors@R: c(person(given = "Alessandra",
+           family = "Valcarcel",
+           role = c("cre", "aut"),
+           email = "alval@pennmedicine.upenn.edu"))
+Maintainer: Alessandra Valcarcel <alval@pennmedicine.com>
 License: GPL-2
 Encoding: UTF-8
-LazyData: true
 ByteCompile: true
 URL: https://github.com/avalcarcel9/aliviateR
 BugReports: https://github.com/avalcarcel9/aliviateR/issues
+Imports:
+    usethis (>= 0.0.0.9000),
+    git2r,
+    devtools,
+    tibble
 Suggests: 
+    knitr,
+    rmarkdown,
+    testthat,
     covr
+RoxygenNote: 6.0.1
