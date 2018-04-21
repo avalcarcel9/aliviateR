@@ -9,50 +9,90 @@
 aliviateR
 =========
 
-The goal of aliviateR is to ...
+The goal of aliviateR is to help automate the process of building packages. I hope to eventually write and include some functions that I constantly am coding for research.
 
 Installation
 ------------
 
-You can install the released version of aliviateR from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("aliviateR")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+`aliviateR` is currently only available as a development version from [GitHub](https://github.com/). You can download this version with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("avalcarcel9/aliviateR")
 ```
 
-Example
--------
+For any issues, please feel free to email me or submit and issue.
 
-This is a basic example which shows you how to solve a common problem:
+Functions
+---------
 
-``` r
-## basic example code
-```
+Currently, there are 3 functions available through `aliviateR`. Below I will define the functions.
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+The first function is `aliviateR::alval_flow()`. This function will create the project directory for a package similar to `File > New Project > R package`. In addition to creating the package directory filled in the proper package form, it allows you to edit the description with your personal information, add a vignette, add testing options, and adds the readme files.
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+alval_flow(path = NULL, 
+           pkg_name = NULL, 
+           vignette_name = NULL,
+           testing = TRUE, 
+           title = "What the Package Does (One Line, Title Case)",
+           description = "What the package does (one paragraph).",
+           firstname = "Alessandra", 
+           lastname = "Valcarcel",
+           email = "alval@pennmedicine.com", 
+           role = c("aut", "cre"))
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
+Feel free to change the `firstname`, `lastname`, and `email` fields and use on your own. Type `?aliviateR::alval_flow` for documentation.
 
-You can also embed plots, for example:
+The next function `aliviateR::alval_git` initializes a GitHub repo for your package, adds, commits, and pushes the package contents to GitHub. **This requires that GitHub is properly configured on your machine and with RStudio.** For more information on configuration
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+[RStudio Support](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+[R packages by Hadley Wickham](http://r-pkgs.had.co.nz/git.html)
+
+[Blog](http://happygitwithr.com/rstudio-git-github.html)
+
+At the minium you need your GitHub username and email set up as well as a token set up in your .Renviron. R also has to know where your ssh keys are. You can check if this is done already by running:
+
+``` r
+usethis::use_git_config()
+#> $user.name
+#> [1] "avalcarcel9"
+#> 
+#> $user.email
+#> [1] "alval@pennmedicine.upenn.ed"
+Sys.getenv("GITHUB_PAT")
+#> [1] "8e0e1d5ee1d5e43cb09f3b6a27ba4f5fed5744dd"
+git2r::cred_ssh_key()
+#> An object of class "cred_ssh_key"
+#> Slot "publickey":
+#> [1] "/Users/alval/.ssh/id_rsa.pub"
+#> 
+#> Slot "privatekey":
+#> [1] "/Users/alval/.ssh/id_rsa"
+#> 
+#> Slot "passphrase":
+#> character(0)
+```
+
+If these are properly set up then `aliviateR::alval_git()` should run.
+
+``` r
+alval_git(pkg_path = NULL, 
+          credentials = NULL)
+```
+
+You'll need to specify the path to your package. By default the credentials are NULL. This arguement is passed to `devtools::usethis()` so check our their documentation for more info though `NULL` should still run. I set it to something special `credentials = alval` for a specialized path to my credentials. The other option is to input your own if `NULL` doesn't seem to work. After you run this, check that the package folder is set up as a repo on your GitHub.
+
+The `aliviateR::alval_badges()` function adds continuous integration and coverage checks. Additionally, it returns the badges you can add to your readme.
+
+``` r
+alval_badges(pkg_path = NULL, 
+             gh_username = NULL, 
+             travis = TRUE,
+             coverage = TRUE, 
+             appveyor = TRUE)
+```
+
+You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open and you can configure the setting options interactively. Remember to copy and paste the badge into your readme.
