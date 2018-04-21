@@ -1,0 +1,9 @@
+Package: aliviateR
+Version: 0.0.1
+Title: A package to automate my R workflow.
+Description: This package is a compilation of functions that make my life easier. It contains material to automate creating an R package using the workflow that I like with my information. It can be adapted to use my workflow with your information.
+Authors@R: Alessandra (Ali) M. Valcarcel <alval@pennmedicine.com> [aut, cre]
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true
