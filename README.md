@@ -57,23 +57,8 @@ At the minium you need your GitHub username and email set up as well as a token 
 
 ``` r
 usethis::use_git_config()
-#> $user.name
-#> [1] "avalcarcel9"
-#> 
-#> $user.email
-#> [1] "alval@pennmedicine.upenn.ed"
 Sys.getenv("GITHUB_PAT")
-#> [1] "8e0e1d5ee1d5e43cb09f3b6a27ba4f5fed5744dd"
 git2r::cred_ssh_key()
-#> An object of class "cred_ssh_key"
-#> Slot "publickey":
-#> [1] "/Users/alval/.ssh/id_rsa.pub"
-#> 
-#> Slot "privatekey":
-#> [1] "/Users/alval/.ssh/id_rsa"
-#> 
-#> Slot "passphrase":
-#> character(0)
 ```
 
 If these are properly set up then `aliviateR::alval_git()` should run.
@@ -96,3 +81,5 @@ alval_badges(pkg_path = NULL,
 ```
 
 You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open and you can configure the setting options interactively. Remember to copy and paste the badge into your readme.
+
+For a full example of my flow see the [vignette]() for an example.

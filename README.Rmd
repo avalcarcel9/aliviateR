@@ -65,7 +65,7 @@ The next function `aliviateR::alval_git` initializes a GitHub repo for your pack
 
 At the minium you need your GitHub username and email set up as well as a token set up in your .Renviron. R also has to know where your ssh keys are. You can check if this is done already by running:
 
-```{r}
+```{r, eval = FALSE}
 usethis::use_git_config()
 Sys.getenv("GITHUB_PAT")
 git2r::cred_ssh_key()
@@ -92,4 +92,5 @@ alval_badges(pkg_path = NULL,
 
 You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open and you can configure the setting options interactively. Remember to copy and paste the badge into your readme.
 
+For a full example of my flow see the [vignette]() for an example.
 
