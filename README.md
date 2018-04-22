@@ -45,13 +45,7 @@ alval_flow(path = NULL,
 
 Feel free to change the `firstname`, `lastname`, and `email` fields and use on your own. Type `?aliviateR::alval_flow` for documentation.
 
-The next function `aliviateR::alval_git` initializes a GitHub repo for your package, adds, commits, and pushes the package contents to GitHub. **This requires that GitHub is properly configured on your machine and with RStudio.** For more information on configuration
-
-[RStudio Support](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN)
-
-[R packages by Hadley Wickham](http://r-pkgs.had.co.nz/git.html)
-
-[Blog](http://happygitwithr.com/rstudio-git-github.html)
+The next function `aliviateR::alval_git` initializes a GitHub repo for your package, adds, commits, and pushes the package contents to GitHub. **This requires that GitHub is properly configured on your machine and with RStudio.** For more information on configuration see [RStudio Support](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN), [R packages by Hadley Wickham](http://r-pkgs.had.co.nz/git.html), and [Blog](http://happygitwithr.com/rstudio-git-github.html).
 
 At the minium you need your GitHub username and email set up as well as a token set up in your .Renviron. R also has to know where your ssh keys are. You can check if this is done already by running:
 
@@ -68,7 +62,7 @@ alval_git(pkg_path = NULL,
           credentials = NULL)
 ```
 
-You'll need to specify the path to your package. By default the credentials are NULL. This arguement is passed to `devtools::usethis()` so check our their documentation for more info though `NULL` should still run. I set it to something special `credentials = alval` for a specialized path to my credentials. The other option is to input your own if `NULL` doesn't seem to work. After you run this, check that the package folder is set up as a repo on your GitHub.
+You'll need to specify the path to your package. By default the credentials are NULL. This arguement is passed to `devtools::usethis::use_git()` so check our their documentation for more info though `NULL` should still run. I set it to something special `credentials = alval` for a specialized path to my credentials. The other option is to input your own if `NULL` doesn't seem to work. After you run this, check that the package folder is set up as a repo on your GitHub.
 
 The `aliviateR::alval_badges()` function adds continuous integration and coverage checks. Additionally, it returns the badges you can add to your readme.
 
@@ -82,4 +76,4 @@ alval_badges(pkg_path = NULL,
 
 You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open and you can configure the setting options interactively. Remember to copy and paste the badge into your readme.
 
-For a full example of my flow see the [vignette]() for an example.
+For a full example of my flow see the [vignette](https://github.com/avalcarcel9/aliviateR/blob/master/vignettes/vignette.Rmd) for an example.

@@ -86,9 +86,68 @@ If you go to the path you specified you will now see a folder with the package n
 
 Notice that the man and R folders are empty. We will fill the R folder with content in a bit and will let `roxygen2` fill our man and namespace.
 
-Before we move on though, you'll definitely need to go into the description and fix the Author@R field with your information.
+Before we move on though, you'll definitely need to go into the description and fix the Author@R field with your information returned from the function.
 
 ## Initalize with GitHub
 
+I always want to host the package on GitHub for version control and to give users a development version with quick bug fixes. The `aliviateR::alval_git` function will initalize the package directory as GitHub repository, add the contents, commit the contents, and push. __This requires that GitHub is properly configured on your machine and with RStudio.__ For more information on configuration see the following see [RStudio Support](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN), [R packages by Hadley Wickham](http://r-pkgs.had.co.nz/git.html), and [Blog](http://happygitwithr.com/rstudio-git-github.html).
 
+At the minium you need your GitHub username and email set up as well as a token set up in your .Renviron. R also has to know where your ssh keys are. You can check if this is done already by running:
+
+```{r, eval = FALSE}
+usethis::use_git_config()
+Sys.getenv("GITHUB_PAT")
+git2r::cred_ssh_key()
+```
+
+If set up then `usethis::use_git_config()` shows your user name and email configured properly. Calling `Sys.getenv("GITHUB_PAT")` will return your token and `git2r::cred_ssh_key()` will return your private and public key locations.
+
+If these are properly set up then `aliviateR::alval_git()` should run.
+
+```{r}
+alval_git(pkg_path = '/Users/alval/Box/Research/GoT', 
+          credentials = 'alval')
+```
+
+
+I run this command with the specific `credentials = 'alval'` as I set up my own personal credentials. These credentials are passed to `devtools::usethis::use_git()`. The default for both functions is NULL or you can specify your own.
+
+The output should look similar to the following screenshot.
+
+<center><img src="git_return.png" alt="" width="500px"/></center>
+
+You should check your own GitHub to see if the repo is up and the contents are there.
+
+## Continuous Integration
+
+The `aliviateR::alval_badges()` function adds continuous integration and coverage checks. Additionally, it returns the badges you can add to your readme to display the badges on GitHub.
+
+```{r, eval = FALSE}
+badges = alval_badges(pkg_path = '/Users/alval/Box/Research/GoT', 
+                      gh_username = 'avalcarcel9', 
+                      travis = TRUE,
+                      coverage = TRUE, 
+                      appveyor = TRUE)
+badges$travis_badge
+badges$coverage_badge
+badges$appveyor_badge
+```
+
+Running this function will re-direct you to your travis-ci account and appveyor account. While on these sites you should toggle your account preferences to allow continuous integration of the package.
+
+In R you should see something similar to the screenshot provided below.
+
+<img src="badges.png" alt="" width="400px"/>
+
+You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open and you can configure the setting options interactively. Remember to copy and paste the badge into your readme.
+
+## Check and Build
+
+All that is left to do with your package is add your functions with roxygen headers, and then check and build with roxygen. I personally like to do this with the menu options in RStudio but you can do it through the command line or devtools.
+
+```{r, eval = FALSE}
+devtools::check(pkg = '/Users/alval/Box/Research/GoT)
+```
+
+Whenever you make changes to your package be sure you Clean and Rebuild.
 
