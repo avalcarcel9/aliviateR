@@ -14,9 +14,9 @@ URL: https://github.com/avalcarcel9/aliviateR
 BugReports: https://github.com/avalcarcel9/aliviateR/issues
 Imports:
     usethis (>= 0.0.0.9000),
-    git2r,
-    devtools,
-    tibble
+    git2r (>= 0.21.0),
+    devtools (>= 1.13.5),
+    tibble (>= 1.4.2)
 Suggests: 
     knitr,
     rmarkdown,

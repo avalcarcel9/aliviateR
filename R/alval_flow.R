@@ -71,7 +71,7 @@ alval_flow <- function(path = NULL,
     Version = "0.0.1",
     Title = title,
     Description = description,
-    "Author@R" = cat(paste0('c(person(given = "', firstname, '",',
+    `Author@R` = cat(paste0('c(person(given = "', firstname, '",',
                         'family = "', lastname, '",',
                         'email = "', email, '",',
                         'role = ', 'c(', paste0('"',role[1], '"',',', '"',role[2], '"') ,')', ')')),
@@ -85,6 +85,10 @@ alval_flow <- function(path = NULL,
   )
 
   usethis::use_description(defaults)
-  message('Be sure to edit Author@R text with proper spacing.')
+  message('Be sure to edit Author@R text with info below.')
+  message(cat(paste0('c(person(given = "', firstname, '",',
+                     'family = "', lastname, '",',
+                     'email = "', email, '",',
+                     'role = ', 'c(', paste0('"',role[1], '"',',', '"',role[2], '"') ,')', ')')))
 }
 
