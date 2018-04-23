@@ -63,8 +63,7 @@ alval_badges <- function(pkg_path = NULL,
 
   }
   if(cran == TRUE){
-    badgecreatr::badge_cran(ghaccount = gh_username,
-                            ghrepo = repo)
+    badgecreatr::badge_cran(pack)
   }
 
   message('Please check that badges were already added to your README. You need to manually add the appveyor badge.')
