@@ -10,7 +10,7 @@
 #' @export
 #' @importFrom tibble tibble
 #' @importFrom usethis use_travis use_coverage use_appveyor
-#' @importFrom badgecreatr badge_travis badge_codecov
+#' @importFrom badgecreatr badge_travis badge_codecov badge_cran
 #' @return Tibble with badges based on user inputs. If not input FALSE will be returned.
 #' @examples \dontrun{
 #' badges = alval_ci(pkg_path = '/Users/alval/Box/Research/aliviateR', gh_username = 'avalcarcel9', coverage = FALSE)
