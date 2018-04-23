@@ -41,12 +41,22 @@ devtools::install_github("avalcarcel9/aliviateR")
 library(aliviateR)
 ```
 
-
 For any issues, please feel free to email me or submit and issue.
 
 ## Tutorial Information
 
 In this tutorial I am going to create an R package that scrapes Game of Thrones data from the internet. After this tutorial, I will actually host the package on my [GitHub](https://github.com/avalcarcel9). You can follow along whether you have functions or not but know that this will be generating folders on your machine.
+
+## `roxygen2` Header
+
+This function is very simple and just returns the roxygen header for either a function or data.
+
+```{r}
+aliviateR::printroxygenheader(func = TRUE,
+                              data = FALSE)
+```
+
+You can change the logicals to obtain different headers. Each function in your package will need a header filled out to properly compile. This is just a generic header and you don't need all arguments.
 
 ## Create Package Structure
 

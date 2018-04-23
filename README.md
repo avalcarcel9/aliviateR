@@ -26,9 +26,18 @@ For any issues, please feel free to email me or submit and issue.
 Functions
 ---------
 
-Currently, there are 3 functions available through `aliviateR`. Below I will define the functions.
+Currently, there are 4 functions available through `aliviateR`. Below I will define the functions.
 
-The first function is `aliviateR::alval_flow()`. This function will create the project directory for a package similar to `File > New Project > R package`. In addition to creating the package directory filled in the proper package form, it allows you to edit the description with your personal information, add a vignette, add testing options, and adds the readme files.
+The first function is very simple and just prints a generic roxygen header for a function and/or data.
+
+``` r
+aliviateR::printroxygenheader(func = TRUE,
+                              data = FALSE)
+```
+
+By default it returns only a function header but you can choose to return both or just a data header by changing the logicals.
+
+The next function is `aliviateR::alval_flow()`. This function will create the project directory for a package similar to `File > New Project > R package`. In addition to creating the package directory filled in the proper package form, it allows you to edit the description with your personal information, add a vignette, add testing options, and adds the readme files.
 
 ``` r
 alval_flow(path = NULL, 
