@@ -139,7 +139,7 @@ In R you should see something similar to the screenshot provided below.
 
 <img src="badges.png" alt="" width="400px"/>
 
-You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open and you can configure the setting options interactively. Remember to copy and paste the badge into your readme.
+You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open and you can configure the setting options interactively. Remember to copy and paste the appveyor badge into your readme. The others should be added automatically if specified.
 
 ## Check and Build
 

@@ -5,7 +5,7 @@
 \title{Add Continuous Integration Badges}
 \usage{
 alval_badges(pkg_path = NULL, gh_username = NULL, travis = TRUE,
-  coverage = TRUE, appveyor = TRUE)
+  coverage = TRUE, appveyor = TRUE, cran = TRUE)
 }
 \arguments{
 \item{pkg_path}{The path to your package}
@@ -17,6 +17,8 @@ alval_badges(pkg_path = NULL, gh_username = NULL, travis = TRUE,
 \item{coverage}{TRUE by default adds coverage reports to a package that is in Travis CI}
 
 \item{appveyor}{TRUE by default adds a basic appveyor.yml to the top level of a package and opens AppVeyor CI.}
+
+\item{cran}{TRUE by default adds cran badge for cran versin or not on cran if not on cran}
 }
 \value{
 Tibble with badges based on user inputs. If not input FALSE will be returned.

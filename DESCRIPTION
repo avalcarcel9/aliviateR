@@ -16,7 +16,8 @@ Imports:
     usethis (>= 0.0.0.9000),
     git2r (>= 0.21.0),
     devtools (>= 1.13.5),
-    tibble (>= 1.4.2)
+    tibble (>= 1.4.2),
+    badgecreatr
 Suggests: 
     knitr,
     rmarkdown,

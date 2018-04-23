@@ -6,9 +6,11 @@
 #' @param travis TRUE by default adds .travis.yml to the top level directory and opens travis for configuration
 #' @param coverage TRUE by default adds coverage reports to a package that is in Travis CI
 #' @param appveyor TRUE by default adds a basic appveyor.yml to the top level of a package and opens AppVeyor CI.
+#' @param cran TRUE by default adds cran badge for cran versin or not on cran if not on cran
 #' @export
 #' @importFrom tibble tibble
 #' @importFrom usethis use_travis use_coverage use_appveyor
+#' @importFrom badgecreatr badge_travis badge_codecov
 #' @return Tibble with badges based on user inputs. If not input FALSE will be returned.
 #' @examples \dontrun{
 #' badges = alval_ci(pkg_path = '/Users/alval/Box/Research/aliviateR', gh_username = 'avalcarcel9', coverage = FALSE)
@@ -20,7 +22,8 @@ alval_badges <- function(pkg_path = NULL,
                          gh_username = NULL,
                          travis = TRUE,
                          coverage = TRUE,
-                         appveyor = TRUE){
+                         appveyor = TRUE,
+                         cran = TRUE){
   # Check package directory is specified and exists
   if(is.null(pkg_path)){
     return('You need to provide a path to the package')
@@ -38,34 +41,32 @@ alval_badges <- function(pkg_path = NULL,
   pack = gsub("[.]", "-", pack)
   repo = paste0(gh_username, "/", pack)
 
-  # Specify badges to return for FALSE to any parameters
-  travis_badge = FALSE
-  coverage_badge = FALSE
-  appveyor_badge = FALSE
-
-  # Set up ymls
+  # Set up ymls and add badge
   if(travis == TRUE){
+    # Create travis.yml
     usethis::use_travis(browse = interactive())
-    travis_badge =   paste0(
-      "[![Travis build status](https://travis-ci.org/",
-      repo,
-      ".svg?branch=master)](https://travis-ci.org/", repo, ")")
+    # Add badge to readme
+    badgecreatr::badge_travis(ghaccount = gh_username,
+                              ghrepo = repo)
+
+
   }
   if(coverage == TRUE){
+    # Set up code coverage
     usethis::use_coverage(type = c("codecov", "coveralls"))
-    coverage_badge = paste0(
-      "[![Coverage status](https://coveralls.io/repos/github/",
-      repo, "/badge.svg?branch=master)](",
-      "https://coveralls.io/r/", repo, "?branch=master)")
+    # Add badge
+    badgecreatr::badge_codecov(ghaccount = gh_username,
+                               ghrepo = repo)
+
   }
   if(appveyor == TRUE){
     usethis::use_appveyor(browse = interactive())
-    appveyor_badge = paste0(
-      "[![AppVeyor Build Status](",
-      "https://ci.appveyor.com/api/projects/status/github/",
-      repo, "?branch=master&svg=true)](",
-      "https://ci.appveyor.com/project/", repo, ")")
+
   }
-  message('Please add any non FALSE badges to your README.')
-  return(tibble::tibble(travis_badge, coverage_badge, appveyor_badge))
+  if(cran == TRUE){
+    badgecreatr::badge_cran(ghaccount = gh_username,
+                            ghrepo = repo)
+  }
+
+  message('Please check that badges were already added to your README. You need to manually add the appveyor badge.')
 }
