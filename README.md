@@ -75,6 +75,6 @@ alval_badges(pkg_path = NULL,
              cran = TRUE)
 ```
 
-You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open and you can configure the setting options interactively. You only need to to copy and paste the appveyor badge if specified into your readme. The others should be added automatically but be sure to check that they were in fact added.
+You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open and you can configure the setting options interactively. You only need to to copy and paste the badges you specified into your readme.
 
 For a full example of my flow see the [vignette](https://github.com/avalcarcel9/aliviateR/blob/master/vignettes/vignette.Rmd) for an example.

@@ -41,30 +41,43 @@ alval_badges <- function(pkg_path = NULL,
   pack = gsub("[.]", "-", pack)
   repo = paste0(gh_username, "/", pack)
 
+  travis_badge = FALSE
+  coverage_badge = FALSE
+  appveyor_badge = FALSE
+  cran_badge = FALSE
+
   # Set up ymls and add badge
   if(travis == TRUE){
     # Create travis.yml
     usethis::use_travis(browse = interactive())
     # Add badge to readme
-    badgecreatr::badge_travis(ghaccount = gh_username,
-                              ghrepo = repo)
-
-
+    travis_badge = badgecreatr::badge_travis(ghaccount = gh_username,
+                                             ghrepo = repo,
+                                             branch = "master")
   }
   if(coverage == TRUE){
     # Set up code coverage
     usethis::use_coverage(type = c("codecov", "coveralls"))
     # Add badge
-    badgecreatr::badge_codecov(pack)
+    coverage_badge = badgecreatr::badge_codecov(ghaccount = gh_username,
+                                                ghrepo = repo,
+                                                branch = "master")
 
   }
   if(appveyor == TRUE){
+    # Create yml
     usethis::use_appveyor(browse = interactive())
-
+    # Create badge
+    appveyor_badge = paste0(
+      "[![AppVeyor Build Status](",
+      "https://ci.appveyor.com/api/projects/status/github/",
+      repo, "?branch=master&svg=true)](",
+      "https://ci.appveyor.com/project/", repo, ")")
   }
   if(cran == TRUE){
-    badgecreatr::badge_cran(pack)
+    cran_badge = badgecreatr::badge_cran(pack)
   }
 
-  message('Please check that badges were already added to your README. You need to manually add the appveyor badge.')
+  message('Please add any non FALSE badges to your README.')
+  return(tibble::tibble(travis_badge, coverage_badge, appveyor_badge, cran_badge))
 }
