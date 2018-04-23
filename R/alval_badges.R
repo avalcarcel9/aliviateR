@@ -55,8 +55,7 @@ alval_badges <- function(pkg_path = NULL,
     # Set up code coverage
     usethis::use_coverage(type = c("codecov", "coveralls"))
     # Add badge
-    badgecreatr::badge_codecov(ghaccount = gh_username,
-                               ghrepo = repo)
+    badgecreatr::badge_codecov(pack)
 
   }
   if(appveyor == TRUE){
