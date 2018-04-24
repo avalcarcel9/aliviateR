@@ -135,6 +135,7 @@ The `aliviateR::alval_badges()` function adds continuous integration and coverag
 ```{r, eval = FALSE}
 badges = alval_badges(pkg_path = '/Users/alval/Box/Research/GoT', 
                       gh_username = 'avalcarcel9', 
+                      interactive = TRUE,
                       travis = TRUE,
                       coverage = TRUE, 
                       appveyor = TRUE)
@@ -143,7 +144,7 @@ badges$coverage_badge
 badges$appveyor_badge
 ```
 
-Running this function will re-direct you to your travis-ci account and appveyor account. While on these sites you should toggle your account preferences to allow continuous integration of the package.
+You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open (if `interactive = TRUE`) and you can configure the setting options interactively. If you have already done this and just need the badges then set `interactive = FALSE`. You only need to to copy and paste the badges you specified into your readme. 
 
 In R you should see something similar to the screenshot provided below.
 

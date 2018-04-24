@@ -78,12 +78,13 @@ The `aliviateR::alval_badges()` function adds continuous integration and coverag
 ``` r
 alval_badges(pkg_path = NULL, 
              gh_username = NULL, 
+             interactive = TRUE,
              travis = TRUE,
              coverage = TRUE, 
              appveyor = TRUE,
              cran = TRUE)
 ```
 
-You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open and you can configure the setting options interactively. You only need to to copy and paste the badges you specified into your readme.
+You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open (if `interactive = TRUE`) and you can configure the setting options interactively. If you have already done this and just need the badges then set `interactive = FALSE`. You only need to to copy and paste the badges you specified into your readme.
 
 For a full example of my flow see the [vignette](https://github.com/avalcarcel9/aliviateR/blob/master/vignettes/vignette.Rmd) for an example.
