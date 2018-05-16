@@ -11,7 +11,7 @@
 #' @export
 #' @importFrom tibble tibble
 #' @importFrom usethis use_travis use_coverage use_appveyor
-#' @importFrom badgecreatr badge_travis badge_codecov badge_cran
+#' @importFrom badgecreatr travisbadge codecovbadge cranbadge
 #' @return Tibble with badges based on user inputs. If not input FALSE will be returned.
 #' @examples \dontrun{
 #' badges = alval_ci(pkg_path = '/Users/alval/Box/Research/aliviateR', gh_username = 'avalcarcel9', coverage = FALSE)
@@ -68,9 +68,9 @@ alval_badges <- function(pkg_path = NULL,
       usethis::use_travis(browse = interactive)
     }
     # Return travis badge
-    travis_badge = badgecreatr::badge_travis(ghaccount = gh_username,
-                                             ghrepo = repo,
-                                             branch = "master")
+    travis_badge = badgecreatr::travisbadge(ghaccount = gh_username,
+                                            ghrepo = repo,
+                                            branch = "master")
   }
   # Set up coverage and badge
   if(coverage == TRUE){
@@ -81,9 +81,9 @@ alval_badges <- function(pkg_path = NULL,
     }
 
     # Return coverage badge
-    coverage_badge = badgecreatr::badge_codecov(ghaccount = gh_username,
-                                                ghrepo = pack,
-                                                branch = "master")
+    coverage_badge = badgecreatr::codecovbadge(ghaccount = gh_username,
+                                               ghrepo = pack,
+                                               branch = "master")
   }
 
   # Set up appveyor and badge
@@ -102,7 +102,7 @@ alval_badges <- function(pkg_path = NULL,
 
   # Return CRAN badge
   if(cran == TRUE){
-    cran_badge = badgecreatr::badge_cran(pack)
+    cran_badge = badgecreatr::cranbadge(pack)
   }
 
   message('Please add any non FALSE badges to your README.')

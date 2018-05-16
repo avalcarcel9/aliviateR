@@ -17,7 +17,7 @@ Imports:
     git2r (>= 0.21.0),
     devtools (>= 1.13.5),
     tibble (>= 1.4.2),
-    badgecreatr
+    badgecreatr (>= 0.1.0)
 Suggests: 
     knitr,
     rmarkdown,
