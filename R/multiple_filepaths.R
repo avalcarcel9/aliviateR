@@ -8,7 +8,6 @@
 #' @export
 #' @importFrom dplyr bind_cols
 #' @importFrom magrittr  %>%
-#' @importFrom aliviateR sort_filepaths
 #' @return A tibble of filepaths.
 
 multiple_filepaths <- function(path, pattern = NULL, full.names = TRUE, sort = TRUE){
