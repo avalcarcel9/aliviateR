@@ -62,10 +62,10 @@ You can change the logicals to obtain different headers. Each function in your p
 
 Before anything we will generate the package structure required to host a package using the function `aliviateR::alval_flow`. This function will:
 
-1. Create a folder with the package name you specify in the path specied
+1. Create a folder with the package name you specify in the path specified
 2. Create a vignette `vignette_name` is not NULL
 3. Create testing folder structure if `testing = TRUE`
-4. Manipulate the DESCRIPTION file Title, Description, Maintiainer, and Author@R fields based on the inputs.
+4. Manipulate the DESCRIPTION file Title, Description, Maintainer, and Author@R fields based on the inputs.
 
 By default these are set to my own personal preferences and information but you can easily change any for your own flow or package.
 
@@ -100,9 +100,9 @@ Before we move on though, you'll definitely need to go into the description and 
 
 ## Initalize with GitHub
 
-I always want to host the package on GitHub for version control and to give users a development version with quick bug fixes. The `aliviateR::alval_git` function will initalize the package directory as GitHub repository, add the contents, commit the contents, and push. __This requires that GitHub is properly configured on your machine and with RStudio.__ For more information on configuration see the following see [RStudio Support](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN), [R packages by Hadley Wickham](http://r-pkgs.had.co.nz/git.html), and [Blog](http://happygitwithr.com/rstudio-git-github.html).
+I always want to host the package on GitHub for version control and to give users a development version with quick bug fixes. The `aliviateR::alval_git` function will initialize the package directory as GitHub repository, add the contents, commit the contents, and push. __This requires that GitHub is properly configured on your machine and with RStudio.__ For more information on configuration see the following see [RStudio Support](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN), [R packages by Hadley Wickham](http://r-pkgs.had.co.nz/git.html), and [Blog](http://happygitwithr.com/rstudio-git-github.html).
 
-At the minium you need your GitHub username and email set up as well as a token set up in your .Renviron. R also has to know where your ssh keys are. You can check if this is done already by running:
+At the minim you need your GitHub username and email set up as well as a token set up in your .Renviron. R also has to know where your ssh keys are. You can check if this is done already by running:
 
 ```{r, eval = FALSE}
 usethis::use_git_config()
@@ -144,13 +144,13 @@ badges$coverage_badge
 badges$appveyor_badge
 ```
 
-You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open (if `interactive = TRUE`) and you can configure the setting options interactively. If you have already done this and just need the badges then set `interactive = FALSE`. You only need to to copy and paste the badges you specified into your readme. 
+You'll specify the path to your package and GitHub username. Running this will prompt many of the continuous integration sites to open (if `interactive = TRUE`) and you can configure the setting options interactively. If you have already done this and just need the badges then set `interactive = FALSE`. You only need to to copy and paste the badges you specified into your readme. 
 
 In R you should see something similar to the screenshot provided below.
 
 <img src="badges.png" alt="" width="400px"/>
 
-You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open and you can configure the setting options interactively. Remember to copy and paste the badges into your readme.
+You'll specify the path to your package and GitHub username. Running this will prompt many of the continuous integration sites to open and you can configure the setting options interactively. Remember to copy and paste the badges into your readme.
 
 ## Check and Build
 
@@ -164,7 +164,7 @@ Whenever you make changes to your package be sure you Clean and Rebuild.
 
 ## Other Functions
 
-The `aliviateR::sort_filepaths()` function is a little different than the previous functions. It doesn't help with building packages but is useful in everday research. This function should be used when you would like to sort a data.frame or tibble of filepaths by an ID contained inside the filepath. The ID must be larger than 3 numbers. A tibble will be returned with an additional `id` column.
+The `aliviateR::sort_filepaths()` function is a little different than the previous functions. It doesn't help with building packages but is useful in everyday research. This function should be used when you would like to sort a data.frame or tibble of file paths by an ID contained inside the file path. The ID must be larger than 3 numbers. A tibble will be returned with an additional `id` column.
 
 
 ```{r}
@@ -174,5 +174,25 @@ files = tibble::tibble(files1 = c('/Desktop/subject_111.csv', '/Desktop/subject_
 sort_filepaths(filepaths = files)
 ```
 
-Note that the 902 subject was out of order in the two columns in the original tibble but returned so that all columns match by ID after running the function. This function is especially useful when working with `list.files` for multiple filepaths.
+Note that the 902 subject was out of order in the two columns in the original tibble but returned so that all columns match by ID after running the function. This function is especially useful when working with `list.files()` for multiple file paths.
+
+The `aliviateR::multiple_filepaths()` function similarly does not help with building packages. This function wraps `list.files()` for a set of paths and patterns provided and creates a tibble of each of the files. To show an example, I downloaded the [The Longitudinal MS Lesion Segmentation Challenge](https://smart-stats-tools.org/lesion-challenge). I'll obtain the data and masks for one subject.
+
+Here are the files in the directories:
+
+```{r}
+list.files('/Users/alval/Documents/ISBI_Challenge_2015/training/training01/preprocessed/')
+list.files('/Users/alval/Documents/ISBI_Challenge_2015/training/training01/masks/')
+```
+For this example, I'll return the flair images from all time points from all time points and the masks labelled 'mask1'.
+
+```{r}
+paths = c('/Users/alval/Documents/ISBI_Challenge_2015/training/training01/preprocessed/', '/Users/alval/Documents/ISBI_Challenge_2015/training/training01/masks/')
+patterns = c('flair_pp', 'mask1')
+multiple_filepaths(path = paths, 
+                   pattern = patterns, 
+                   full.names = TRUE, 
+                   sort = FALSE)
+```
+
 

@@ -26,7 +26,7 @@ For any issues, please feel free to email me or submit and issue.
 Functions
 ---------
 
-Currently, there are 5 functions available through `aliviateR`. Below I will define the functions.
+Currently, there are 6 functions available through `aliviateR`. Below I will define the functions.
 
 The first function is very simple and just prints a generic roxygen header for a function and/or data.
 
@@ -91,6 +91,15 @@ The `aliviateR::sort_filepaths()` function is a little different than the previo
 
 ``` r
 sort_filepaths(filepaths)
+```
+
+The `aliviateR::multiple_filepaths()` function similarly does not help with building packages. This function wraps `list.files()` for a set of paths and patterns provided and creates a tibble of each of the files.
+
+``` r
+multiple_filepaths(path, 
+                   pattern = NULL, 
+                   full.names = TRUE, 
+                   sort = TRUE)
 ```
 
 For a full example of my flow see the [vignette](https://github.com/avalcarcel9/aliviateR/blob/master/vignettes/vignette.Rmd) for an example.
