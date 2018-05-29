@@ -3,6 +3,7 @@
 export(alval_badges)
 export(alval_flow)
 export(alval_git)
+export(dsc)
 export(multiple_filepaths)
 export(printroxygenheader)
 export(sort_filepaths)
