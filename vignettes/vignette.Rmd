@@ -164,7 +164,7 @@ Whenever you make changes to your package be sure you Clean and Rebuild.
 
 ## Other Functions
 
-The `aliviateR::sort_filepaths()` function is a little different than the previous functions. It doesn't help with building packages but is useful in everyday research. This function should be used when you would like to sort a data.frame or tibble of file paths by an ID contained inside the file path. The ID must be larger than 3 numbers. A tibble will be returned with an additional `id` column.
+The `aliviateR::sort_filepaths()` function is a little different than the previous functions. It doesn't help with building packages but is useful in everyday research. This function should be used when you would like to sort a data.frame or tibble of file paths by an ID contained inside the file path. The ID by default must larger than 3 numbers. If you want to provide a specific ID pattern use `id_pattern`. This is passed to `stringr::str_extract` so the pattern format should be accepted by that function. A tibble will be returned with an additional `id` column. For this example, we will use the default ID pattern.
 
 
 ```{r}
@@ -176,6 +176,15 @@ sort_filepaths(filepaths = files)
 
 Note that the 902 subject was out of order in the two columns in the original tibble but returned so that all columns match by ID after running the function. This function is especially useful when working with `list.files()` for multiple file paths.
 
+If we want to specify our own pattern we can use `id_patthern`. Just for this example let's assume the ID was a 2 digit number.
+
+```{r}
+files = tibble::tibble(files1 = c('/Desktop/subject_111.csv', '/Desktop/subject_123.csv', '/Desktop/subject_902'),
+                       files2 = c('/Documents/subject_111.csv', '/Documents/subject_902', '/Documents/subject_123.csv'))
+
+sort_filepaths(filepaths = files, id_pattern = "[0-9][0-9]")
+```
+
 The `aliviateR::multiple_filepaths()` function similarly does not help with building packages. This function wraps `list.files()` for a set of paths and patterns provided and creates a tibble of each of the files. To show an example, I downloaded the [The Longitudinal MS Lesion Segmentation Challenge](https://smart-stats-tools.org/lesion-challenge). I'll obtain the data and masks for one subject.
 
 Here are the files in the directories:
@@ -184,15 +193,17 @@ Here are the files in the directories:
 list.files('/Users/alval/Documents/ISBI_Challenge_2015/training/training01/preprocessed/')
 list.files('/Users/alval/Documents/ISBI_Challenge_2015/training/training01/masks/')
 ```
+
 For this example, I'll return the flair images from all time points from all time points and the masks labelled 'mask1'.
 
 ```{r}
-paths = c('/Users/alval/Documents/ISBI_Challenge_2015/training/training01/preprocessed/', '/Users/alval/Documents/ISBI_Challenge_2015/training/training01/masks/')
+paths = c('/Users/alval/Documents/ISBI_Challenge_2015/training/training01/preprocessed', '/Users/alval/Documents/ISBI_Challenge_2015/training/training01/masks')
 patterns = c('flair_pp', 'mask1')
 multiple_filepaths(path = paths, 
                    pattern = patterns, 
                    full.names = TRUE, 
-                   sort = FALSE)
+                   sort = TRUE,
+                   id_pattern = "[0-9][0-9]_[0-9][0-9]")
 ```
 
 

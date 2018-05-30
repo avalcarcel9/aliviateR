@@ -4,10 +4,12 @@
 \alias{sort_filepaths}
 \title{Sorts a data.frame or tibble of filepaths}
 \usage{
-sort_filepaths(filepaths)
+sort_filepaths(filepaths, id_pattern = "[0-9][0-9][0-9]+")
 }
 \arguments{
 \item{filepaths}{A data.frame or tibble of filepaths with an ID contained}
+
+\item{id_pattern}{By default is a 3 digit pattern. Searches for the pattern indicated as a subject ID.}
 }
 \value{
 A sorted tibble of filepaths with an ID column

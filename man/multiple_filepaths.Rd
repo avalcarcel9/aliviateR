@@ -4,7 +4,8 @@
 \alias{multiple_filepaths}
 \title{Obtain a tibble of filepaths}
 \usage{
-multiple_filepaths(path, pattern = NULL, full.names = TRUE, sort = TRUE)
+multiple_filepaths(path, pattern = NULL, full.names = TRUE, sort = TRUE,
+  id_pattern = "[0-9][0-9][0-9]+")
 }
 \arguments{
 \item{path}{A vector of paths for which to obtain the filepaths to specific files}
@@ -15,6 +16,8 @@ If a pattern is required input a vector of patterns that align with the paths su
 \item{full.names}{TRUE by default. Arguement passed to list.files(). Returns full path of file.}
 
 \item{sort}{TRUE by default will sort the filepaths by a subject ID contained inside of the path. FALSE will not sort.}
+
+\item{id_pattern}{By default is a 3 digit pattern. Searches for the pattern indicated as a subject ID.}
 }
 \value{
 A tibble of filepaths.

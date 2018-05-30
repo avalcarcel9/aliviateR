@@ -87,10 +87,10 @@ alval_badges(pkg_path = NULL,
 
 You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open (if `interactive = TRUE`) and you can configure the setting options interactively. If you have already done this and just need the badges then set `interactive = FALSE`. You only need to to copy and paste the badges you specified into your readme.
 
-The `aliviateR::sort_filepaths()` function is a little different than the previous functions. It doesn't help with building packages but is useful in everday research. This function should be used when you would like to sort a data.frame or tibble of filepaths by an ID contained inside the filepath. The ID must be larger than 3 numbers. A tibble will be returned with an additional `id` column.
+The `aliviateR::sort_filepaths()` function is a little different than the previous functions. It doesn't help with building packages but is useful in everday research. This function should be used when you would like to sort a data.frame or tibble of filepaths by an ID contained inside the filepath. The ID by default must larger than 3 numbers. If you want to provide a specific ID pattern use `id_pattern`. This is passed to `stringr::str_extract` so the pattern format should be accepted by that function. A tibble will be returned with an additional `id` column.
 
 ``` r
-sort_filepaths(filepaths)
+sort_filepaths(filepaths, id_pattern = "[0-9][0-9][0-9]+")
 ```
 
 The `aliviateR::multiple_filepaths()` function similarly does not help with building packages. This function wraps `list.files()` for a set of paths and patterns provided and creates a tibble of each of the files.
@@ -99,7 +99,8 @@ The `aliviateR::multiple_filepaths()` function similarly does not help with buil
 multiple_filepaths(path, 
                    pattern = NULL, 
                    full.names = TRUE, 
-                   sort = TRUE)
+                   sort = TRUE,
+                   id_pattern = "[0-9][0-9][0-9]+")
 ```
 
 As I work in imaging data, I've included some functions to help calculate Sørensen–Dice index or coefficient. This is $\\dfrac{2 \\times | X \\cap Y| }{|X| + |Y|}$. `aliviateR::dsc()` will calculate the Sørensen–Dice index between two vectors or images. The input class must be the same so two vectors or two NIFTI objects. It doesn't really matter what vector or image is `gold_standard` or `comp_method` as you can see from the formula we can denote the objects as *X* and *Y* but in practice normally one image is a gold standard and the other is to compare.
