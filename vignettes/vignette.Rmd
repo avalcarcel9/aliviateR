@@ -196,3 +196,29 @@ multiple_filepaths(path = paths,
 ```
 
 
+To calculate Sørensen's–Dice between two objects simply run `aliviateR::dsc()`. For this first example, let's create a simple vector to calculate.
+
+```{r}
+gold_standard = c(1,1,1,0,0,1,1,1)
+comp_method = c(0,1,0,1,0,0,1,1)
+dsc(gold_standard = gold_standard, comp_method = comp_method)
+```
+
+The object returned is a single value representing Sørensen's–Dice index between the two objects. In this simple case, I've provided a simple set of vectors as inputs. The function can be run with NIFTI objects as well. Simply read in the images and provide them as inputs. 
+
+I have also included a function, `aliviateR::dsc_mult_thresholds()`, that calculates Sørensen–Dice index or coefficient for a variety of thresholds input when provided a probability map. Again, `gold_standard` and `prob_map` can be vectors or NIFTI objects so long as they match. `thresholds` is a grid of thresholds you would like to threshold the probability map to obtain binary values. Notice, `mask = NULL` by default. A mask is required if you provide NIFTI objects but can remain NULL if the inputs are already vectorized. In this example, I'll show it for vectors and therefore do not need a mask. If you provide NIFTI objects then you'll need to provide a mask of the area like a brain mask.
+
+```{r}
+prob_map =  runif(100, 0, 1)
+gold_standard = ifelse(prob_map > 0.9, 1, 0)
+thresholds = seq(from = 0, to = 1, by = 0.05)
+
+dsc_mult_thresholds(gold_standard, 
+                    prob_map, 
+                    thresholds, 
+                    mask = NULL)
+```
+
+This function returns a `tibble` with a column of the `threshold` of the thresholds input and a column `dsc` of the Sørensen–Dice value for that threshold. This function helps us assess what threshold on a probability map produces labels that perform well using Sørensen–Dice.
+
+

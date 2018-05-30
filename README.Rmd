@@ -130,5 +130,7 @@ dsc_mult_thresholds(gold_standard,
                     mask = NULL)
 ```
 
+This function returns a `tibble` with a column of the `threshold` of the thresholds input and a column `dsc` of the Sørensen–Dice value for that threshold.
+
 For a full example of my flow see the [vignette](https://github.com/avalcarcel9/aliviateR/blob/master/vignettes/vignette.Rmd) for an example.
 
