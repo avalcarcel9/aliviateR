@@ -17,10 +17,10 @@
 #' sort_filepaths(filepaths = files)
 #'}
 
-sort_filepaths <- function(filepaths){
+sort_filepaths <- function(filepaths, id_pattern = "[0-9][0-9][0-9]+"){
 
   # function that extracts string values larger than 3 numbers
-  extract_number <- function(column){as.numeric(stringr::str_extract(column, "[0-9][0-9][0-9]+"))}
+  extract_number <- function(column){as.numeric(stringr::str_extract(column, id_pattern))}
 
   # check if input is a tibble
   if(tibble::is.tibble(filepaths)==FALSE){
