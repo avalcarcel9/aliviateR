@@ -102,4 +102,22 @@ multiple_filepaths(path,
                    sort = TRUE)
 ```
 
+As I work in imaging data, I've included some functions to help calculate Sørensen–Dice index or coefficient. This is $\\dfrac{2 \\times | X \\cap Y| }{|X| + |Y|}$. `aliviateR::dsc()` will calculate the Sørensen–Dice index between two vectors or images. The input class must be the same so two vectors or two NIFTI objects. It doesn't really matter what vector or image is `gold_standard` or `comp_method` as you can see from the formula we can denote the objects as *X* and *Y* but in practice normally one image is a gold standard and the other is to compare.
+
+``` r
+dsc(gold_standard, 
+    comp_method)
+```
+
+The object returned is a single value representing Sørensen's–Dice index between the two objects.
+
+I have also included a function, `aliviateR::dsc_mult_thresholds()`, that calculates Sørensen–Dice index or coefficient for a variety of thresholds input when provided a probability map. Again, `gold_standard` and `prob_map` can be vectors or NIFTI objects so long as they match. `thresholds` is a grid of thresholds you would like to threshold the probability map to obtain binary values. Notice, `mask = NULL` by default. A mask is required if you provide NIFTI objects but can remain NULL if the inputs are already vectorized.
+
+``` r
+dsc_mult_thresholds(gold_standard, 
+                    prob_map, 
+                    thresholds, 
+                    mask = NULL)
+```
+
 For a full example of my flow see the [vignette](https://github.com/avalcarcel9/aliviateR/blob/master/vignettes/vignette.Rmd) for an example.
