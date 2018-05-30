@@ -28,7 +28,7 @@ multiple_filepaths <- function(path, pattern = NULL, full.names = TRUE, sort = T
   }
 
   # Name list elements based on paths
-  names(filepaths) = paths
+  names(filepaths) = path
   # Create a tibble to overwrite the list
   filepaths = dplyr::bind_cols(filepaths)
 
