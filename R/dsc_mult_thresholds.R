@@ -18,18 +18,18 @@ dsc_mult_thresholds <- function(gold_standard, prob_map, thresholds, mask = NULL
   if(is.null(mask) == TRUE & class(gold_standard)[1] == 'nifti' & class(gold_standard)[1] == 'nifti'){
     stop("'mask' must be provided if 'gold_standard' and 'prob_map' are nifti")
   }
-  
+
   # when a mask is supplied and objects are nifti
   if(is.null(mask) == FALSE & class(gold_standard)[1] == 'nifti' & class(gold_standard)[1] == 'nifti'){
     # turn niftis into vectors
     prob_map = c(prob_map[mask == 1])
     gold_standard = c(gold_standard[mask == 1])
   }
-  
+
   # calculate dsc for each threshold
   pred_lesion = sapply(thresholds, function(x){ifelse(prob_map>x,1,0)})
   pred_dsc = apply(pred_lesion, 2, dsc, gold_standard = gold_standard)
-  pred_dsc = tibble::tibble(theshold = thresholds, dsc = pred_dsc)
+  pred_dsc = tibble::tibble(threshold = thresholds, dsc = pred_dsc)
   return(pred_dsc)
-  
+
 }
