@@ -4,7 +4,7 @@
 #' @param credentials NULL by default. Option 'alval' is specifically for me. If other
 #' specify credentials to be passed to devtools::use_github(credentials = ).
 #' @export
-#' @importFrom devtools use_git use_github
+#' @importFrom usethis use_git use_github
 #' @importFrom git2r cred_ssh_key
 #' @return No objected returned. Check your GitHub to see if the package repo was properly configured.
 #' @examples \dontrun{
@@ -25,9 +25,9 @@ alval_git <- function(pkg_path = NULL, credentials = NULL){
   } else if(credentials == 'alval'){
     cred = git2r::cred_ssh_key(publickey = "/Users/alval/.ssh/id_rsa.pub",
                                privatekey = "/Users/alval/.ssh/id_rsa")
-    devtools::use_github(pkg = pkg_path, credentials = cred)
+    usethis::use_github(pkg = pkg_path, credentials = cred)
   } else{
-    devtools::use_github(pkg = pkg_path, credentials = credentials)
+    usethis::use_github(pkg = pkg_path, credentials = credentials)
   }
 
   return("Seems to have gone properly. Check your GitHub to see if the package repo is up to date.")
