@@ -35,7 +35,7 @@ sort_filepaths <- function(filepaths, id_pattern = "[0-9][0-9][0-9]+"){
 
   # Extract numbers from filepaths (i.e. ID)
   detect_id = filepaths %>%
-    mutate_all(., dplyr::funs(extract_number))
+    mutate_all(dplyr::funs(extract_number))
 
   # Check that all number from filepaths are equal
   if(all(sapply(detect_id, identical, detect_id[[1]])) == TRUE){

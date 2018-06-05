@@ -13,6 +13,7 @@
 #' @param role Default is author and creator
 #' @export
 #' @import usethis
+#' @importFrom utils person
 #' @return Folder in specified R path with R package related objects. Vignette may be opened if specified.
 #' @examples \dontrun{
 #' alval_flow(path = '/Users/alval/Desktop',
