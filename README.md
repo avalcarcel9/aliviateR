@@ -3,7 +3,7 @@
 
 [![Coverage status](https://codecov.io/gh/avalcarcel9/aliviateR/branch/master/graph/badge.svg)](https://codecov.io/github/avalcarcel9/aliviateR?branch=master)
 
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/avalcarcel9/aliviateR?branch=master&svg=true)](https://ci.appveyor.com/project/avalcarcel9/aliviateR)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/avalcarcel9/aliviateR?branch=master&svg=true)](https://ci.appveyor.com/project/avalcarcel9/aliviateR)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 aliviateR
