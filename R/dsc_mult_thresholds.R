@@ -7,7 +7,6 @@
 #' @export
 #' @importFrom tibble tibble
 #' @return A tibble with a column of the user-defined thresholds (threshold) and the Sørensen–Dice (dsc) values is returned.
-#' @examples
 
 dsc_mult_thresholds <- function(gold_standard, prob_map, thresholds, mask = NULL){
   # Obtain predicted dsc when 2 vectors are supplied

@@ -7,7 +7,9 @@
 printroxygenheader(func = TRUE, data = FALSE)
 }
 \arguments{
-\item{func}{TRUE is default to return a generic function header}
+\item{func}{TRUE is default to return a generic function roxygen header}
+
+\item{data}{FALSE is default to return a generic data roxygen header}
 }
 \value{
 Returns a message with header info

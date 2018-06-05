@@ -1,5 +1,6 @@
 #' @title Prints Roxygen Header
-#' @param func TRUE is default to return a generic function header
+#' @param func TRUE is default to return a generic function roxygen header
+#' @param data FALSE is default to return a generic data roxygen header
 #' @description Prints a generic Roxygen header. Can be copied and personalized
 #' @export
 #' @return Returns a message with header info

@@ -1,10 +1,10 @@
 ---
-title: "aliviateR"
+title: "aliviateR Vignette"
 author: "Alessandra (Ali) Valcarcel"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{aliviateR}
+  %\VignetteIndexEntry{Vignette Title}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -102,7 +102,7 @@ Before we move on though, you'll definitely need to go into the description and 
 
 I always want to host the package on GitHub for version control and to give users a development version with quick bug fixes. The `aliviateR::alval_git` function will initialize the package directory as GitHub repository, add the contents, commit the contents, and push. __This requires that GitHub is properly configured on your machine and with RStudio.__ For more information on configuration see the following see [RStudio Support](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN), [R packages by Hadley Wickham](http://r-pkgs.had.co.nz/git.html), and [Blog](http://happygitwithr.com/rstudio-git-github.html).
 
-At the minim you need your GitHub username and email set up as well as a token set up in your .Renviron. R also has to know where your ssh keys are. You can check if this is done already by running:
+At the minimum you need your GitHub username and email set up as well as a token set up in your .Renviron. R also has to know where your ssh keys are. You can check if this is done already by running:
 
 ```{r, eval = FALSE}
 usethis::use_git_config()
@@ -114,7 +114,7 @@ If set up then `usethis::use_git_config()` shows your user name and email config
 
 If these are properly set up then `aliviateR::alval_git()` should run.
 
-```{r}
+```{r, eval = FALSE}
 alval_git(pkg_path = '/Users/alval/Box/Research/GoT', 
           credentials = 'alval')
 ```
@@ -231,5 +231,3 @@ dsc_mult_thresholds(gold_standard,
 ```
 
 This function returns a `tibble` with a column of the `threshold` of the thresholds input and a column `dsc` of the Sørensen–Dice value for that threshold. This function helps us assess what threshold on a probability map produces labels that perform well using Sørensen–Dice.
-
-

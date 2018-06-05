@@ -19,9 +19,9 @@ alval_git <- function(pkg_path = NULL, credentials = NULL){
   }
   # Check what credential was input
   if(is.null(credentials)==TRUE){
-    devtools::use_git(message = "First commit using aliviateR",
+    usethis::use_git(message = "First commit using aliviateR",
                       pkg = pkg_path)
-    devtools::use_github(pkg = pkg_path, credentials = NULL)
+    usethis::use_github(pkg = pkg_path, credentials = NULL)
   } else if(credentials == 'alval'){
     cred = git2r::cred_ssh_key(publickey = "/Users/alval/.ssh/id_rsa.pub",
                                privatekey = "/Users/alval/.ssh/id_rsa")
