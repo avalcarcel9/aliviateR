@@ -5,6 +5,7 @@
 #' @param pkg_name Name of package you are creating
 #' @param vignette_name NULL or name of vignette file to be generated. NULL by default will not generate a vignette or associated files
 #' @param testing FALSE by default. Logical for building testing material through usethis
+#' @param data TRUE by default. Logical for adding data to package structure.
 #' @param title Package title to be put in description
 #' @param description Description to be put in description
 #' @param firstname First name. Defaults to my firt name
@@ -32,6 +33,7 @@ alval_flow <- function(path = NULL,
                        pkg_name = NULL,
                        vignette_name = NULL,
                        testing = TRUE,
+                       data = TRUE,
                        title = "What the Package Does (One Line, Title Case)",
                        description = "What the package does (one paragraph).",
                        firstname = "Alessandra",
@@ -64,6 +66,9 @@ alval_flow <- function(path = NULL,
   # Sets up testing infrastructure
   if(testing == TRUE){
     usethis::use_testthat()
+  }
+  if(data == TRUE){
+    usethis::use_data()
   }
 
   # Populate description
