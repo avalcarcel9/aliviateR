@@ -21,6 +21,7 @@
 #' pkg_name = "test",
 #' vignette_name = NULL,
 #' testing = FALSE,
+#' data = TRUE
 #' title = "What the Package Does (One Line, Title Case)",
 #' description = "What the package does (one paragraph).",
 #' firstname = "Alessandra (Ali)",

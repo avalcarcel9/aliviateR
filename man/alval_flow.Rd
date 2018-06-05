@@ -5,7 +5,8 @@
 \title{Generates an R package}
 \usage{
 alval_flow(path = NULL, pkg_name = NULL, vignette_name = NULL,
-  testing = TRUE, title = "What the Package Does (One Line, Title Case)",
+  testing = TRUE, data = TRUE,
+  title = "What the Package Does (One Line, Title Case)",
   description = "What the package does (one paragraph).",
   firstname = "Alessandra", lastname = "Valcarcel",
   email = "alval@pennmedicine.com", role = c("aut", "cre"))
@@ -18,6 +19,8 @@ alval_flow(path = NULL, pkg_name = NULL, vignette_name = NULL,
 \item{vignette_name}{NULL or name of vignette file to be generated. NULL by default will not generate a vignette or associated files}
 
 \item{testing}{FALSE by default. Logical for building testing material through usethis}
+
+\item{data}{TRUE by default. Logical for adding data to package structure.}
 
 \item{title}{Package title to be put in description}
 
