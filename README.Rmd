@@ -132,5 +132,14 @@ dsc_mult_thresholds(gold_standard,
 
 This function returns a `tibble` with a column of the `threshold` of the thresholds input and a column `dsc` of the Sørensen–Dice value for that threshold.
 
+Often, I am importing many `.RData` or `.rda` objects that are saved in a single folder. This is especially useful for when the `.RData` file is the same and you planning to bind them.
+
+```{r, eval = FALSE}
+load_mrdata(path, 
+            pattern)
+```
+
+Simply provide the `path` to the folder that houses all of the saved objects and the `pattern` of the files you wish to import. If there is no pattern and you'd simply like to import everything set to `NULL`.
+
 For a full example of my flow see the [vignette](https://github.com/avalcarcel9/aliviateR/blob/master/vignettes/vignette.Rmd) for an example.
 
