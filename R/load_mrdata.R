@@ -5,8 +5,10 @@
 #' @export
 
 load_mrdata <- function(path, pattern){
+  og_wd = getwd()
   files = list.files(path = path, pattern = pattern)
   setwd(path)
   data = sapply(files, function(x) mget(load(x)), simplify = TRUE)
+  setwd(og_wd)
   return(data)
 }
