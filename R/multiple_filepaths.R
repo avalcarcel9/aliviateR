@@ -23,7 +23,7 @@ multiple_filepaths <- function(path, pattern = NULL, full.names = TRUE, sort = T
   if(is.null(pattern) == TRUE){
     # Obtain filepath with no pattern
     for(i in 1:length(path)){
-      filepath[[i]] = list.files(path = path[i], full.names = full.names)
+      filepaths[[i]] = list.files(path = path[i], full.names = full.names)
     }
   }
 
