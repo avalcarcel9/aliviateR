@@ -2,9 +2,7 @@
 output: github_document
 ---
 
-[![Travis build status](https://travis-ci.org/avalcarcel9/aliviateR.svg?branch=master)](https://travis-ci.org/avalcarcel9/aliviateR)
-
-[![Build status](https://ci.appveyor.com/api/projects/status/6780k8i5yle7ffky/branch/master?svg=true)](https://ci.appveyor.com/project/avalcarcel9/aliviater-6poks/branch/master)
+[![Travis build status](https://travis-ci.org/avalcarcel9/aliviateR.svg?branch=master)](https://travis-ci.org/avalcarcel9/aliviateR)[![Build status](https://ci.appveyor.com/api/projects/status/6780k8i5yle7ffky/branch/master?svg=true)](https://ci.appveyor.com/project/avalcarcel9/aliviater-6poks/branch/master)[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/aliviateR)](https://cran.r-project.org/package=aliviateR)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -18,7 +16,7 @@ knitr::opts_chunk$set(
 ```
 # aliviateR
 
-The goal of aliviateR is to help automate the process of building packages. I hope to eventually write and include some functions that I constantly am coding for research.
+The goal of aliviateR is to help automate the process of building packages. It also contains functions that I constantly need for work. Maybe some of it is useful for you.
 
 ## Installation
 
