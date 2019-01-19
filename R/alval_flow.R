@@ -98,4 +98,3 @@ alval_flow <- function(path = NULL,
                      'email = "', email, '",',
                      'role = ', 'c(', paste0('"',role[1], '"',',', '"',role[2], '"') ,')', ')')))
 }
-

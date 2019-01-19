@@ -12,8 +12,12 @@
 #' @return A sorted tibble of filepaths with an ID column
 #'@examples
 #' \dontrun{
-#' files = tibble::tibble(files1 = c('/Desktop/subject_111.csv', '/Desktop/subject_123.csv', '/Desktop/subject_902'),
-#'                        files2 = c('/Documents/subject_111.csv', '/Documents/subject_902', '/Documents/subject_123.csv'))
+#' files = tibble::tibble(files1 = c('/Desktop/subject_111.csv',
+#'                                   '/Desktop/subject_123.csv',
+#'                                   '/Desktop/subject_902'),
+#'                        files2 = c('/Documents/subject_111.csv',
+#'                                   '/Documents/subject_902',
+#'                                   '/Documents/subject_123.csv'))
 #'
 #' sort_filepaths(filepaths = files)
 #'}

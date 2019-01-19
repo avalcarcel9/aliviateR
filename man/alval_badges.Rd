@@ -31,7 +31,9 @@ Add continuous integration services to the R package. Additionally provide
 }
 \examples{
 \dontrun{
-badges = alval_ci(pkg_path = '/Users/alval/Box/Research/aliviateR', gh_username = 'avalcarcel9', coverage = FALSE)
+badges = alval_ci(pkg_path = '/Users/alval/Box/Research/aliviateR',
+                  gh_username = 'avalcarcel9',
+                  coverage = FALSE)
 badges$travis_badge
 badges$coverage_badge
 badges$appveyor_badge}

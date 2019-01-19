@@ -11,6 +11,8 @@
 #' alval_git(pkg_path = '/Users/alval/Box/Research/aliviateR', credentials = 'alval')}
 
 alval_git <- function(pkg_path = NULL, credentials = NULL){
+  old_wd = getwd()
+  setwd(pkg_path)
   # Check path was specified properly
   if(is.null(pkg_path)){
     return("You must specify a path to the package.")
@@ -19,16 +21,15 @@ alval_git <- function(pkg_path = NULL, credentials = NULL){
   }
   # Check what credential was input
   if(is.null(credentials)==TRUE){
-    usethis::use_git(message = "First commit using aliviateR",
-                      pkg = pkg_path)
-    usethis::use_github(pkg = pkg_path, credentials = NULL)
+    usethis::use_git(message = "First commit using aliviateR")
+    usethis::use_github(credentials = NULL)
   } else if(credentials == 'alval'){
     cred = git2r::cred_ssh_key(publickey = "/Users/alval/.ssh/id_rsa.pub",
                                privatekey = "/Users/alval/.ssh/id_rsa")
-    usethis::use_github(pkg = pkg_path, credentials = cred)
+    usethis::use_github(credentials = cred)
   } else{
-    usethis::use_github(pkg = pkg_path, credentials = credentials)
+    usethis::use_github(credentials = credentials)
   }
-
+  setwd(old_wd)
   return("Seems to have gone properly. Check your GitHub to see if the package repo is up to date.")
 }

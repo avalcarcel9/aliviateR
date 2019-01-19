@@ -4,8 +4,8 @@
 \alias{multiple_filepaths}
 \title{Obtain a tibble of filepaths}
 \usage{
-multiple_filepaths(path, pattern = NULL, full.names = TRUE, sort = TRUE,
-  id_pattern = "[0-9][0-9][0-9]+")
+multiple_filepaths(path, pattern = NULL, full.names = TRUE,
+  sort = TRUE, id_pattern = "[0-9][0-9][0-9]+")
 }
 \arguments{
 \item{path}{A vector of paths for which to obtain the filepaths to specific files}
