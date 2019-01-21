@@ -15,7 +15,7 @@ BugReports: https://github.com/avalcarcel9/aliviateR/issues
 Imports:
     usethis (>= 0.0.0.9000),
     tibble (>= 2.0.0),
-    badgecreatr (>= 0.2.0),
+    badgecreatr (>= 0.1.0),
     git2r (>= 0.21.0),
     dplyr (>= 0.7.4),
     stringr (>= 1.3.0),
@@ -28,5 +28,7 @@ Suggests:
     rmarkdown,
     testthat,
     covr
+Remotes:
+    RMHogervorst/badgecreatr
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr
