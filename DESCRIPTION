@@ -28,7 +28,5 @@ Suggests:
     rmarkdown,
     testthat,
     covr
-Remotes:
-    RMHogervorst/badgecreatr
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr
