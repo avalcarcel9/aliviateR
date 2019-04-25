@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
-# aliviateR
+# aliviateR <img src="inst/sticker3.png" width = "150" align="right" />
 
 The goal of aliviateR is to help automate the process of building packages. It also contains functions that I constantly need for work. Maybe some of it is useful for you.
 

@@ -1,6 +1,5 @@
-^aliviateR\.Rproj$
+^inst/icon\.png$
+^inst/sticker\.R$
+^inst/sticker\.png$
+^.*\.Rproj$
 ^\.Rproj\.user$
-^README\.Rmd$
-^\.travis\.yml$
-^codecov\.yml$
-^appveyor\.yml$

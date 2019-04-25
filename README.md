@@ -1,11 +1,11 @@
 
 [![Travis build
 status](https://travis-ci.org/avalcarcel9/aliviateR.svg?branch=master)](https://travis-ci.org/avalcarcel9/aliviateR)[![Build
-status](https://ci.appveyor.com/api/projects/status/6780k8i5yle7ffky/branch/master?svg=true)](https://ci.appveyor.com/project/avalcarcel9/aliviater-6poks/branch/master)[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/aliviateR)](https://cran.r-project.org/package=aliviateR)
+status](https://ci.appveyor.com/api/projects/status/6780k8i5yle7ffky/branch/master?svg=true)](https://ci.appveyor.com/project/avalcarcel9/aliviater-6poks/branch/master)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# aliviateR
+# aliviateR <img src="inst/sticker3.png" width = "150" align="right" />
 
 The goal of aliviateR is to help automate the process of building
 packages. It also contains functions that I constantly need for work.
