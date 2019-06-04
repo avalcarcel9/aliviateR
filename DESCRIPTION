@@ -12,22 +12,26 @@ Encoding: UTF-8
 ByteCompile: true
 URL: https://github.com/avalcarcel9/aliviateR
 BugReports: https://github.com/avalcarcel9/aliviateR/issues
+Depends: R (>= 2.10)
 Imports:
-    usethis (>= 0.0.0.9000),
-    tibble (>= 2.0.0),
     badgecreatr (>= 0.2.0),
-    git2r (>= 0.21.0),
-    dplyr (>= 0.7.4),
-    stringr (>= 1.3.0),
-    magrittr (>= 1.5),
-    devtools,
     desc,
+    devtools,
+    dplyr (>= 0.7.4),
+    git2r (>= 0.21.0),
+    grDevices,
+    magrittr (>= 1.5),
+    neurobase (>= 1.27.6),
+    oro.nifti(>= 0.9.11),
+    stringr (>= 1.3.0),
+    tibble (>= 2.0.0),
+    usethis (>= 0.0.0.9000),
     utils
 Suggests: 
+    covr,
     knitr,
     rmarkdown,
-    testthat,
-    covr
+    testthat
 Remotes:
     RMHogervorst/badgecreatr
 RoxygenNote: 6.1.1

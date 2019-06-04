@@ -11,20 +11,30 @@
 
 dsc <- function(gold_standard, comp_method){
   # Check inputs are binary 0 and 1
-  if(all(gold_standard == 0 | gold_standard == 1) == FALSE | all(comp_method == 0 | comp_method == 1) == FALSE){
+  if(all(gold_standard == 0 | gold_standard == 1) == FALSE){
     return('Inputs are not binary 0 or 1. Please check gold_standard and comp_method are both 0/1 binary.')
-  } 
-  
+  }
+  if(all(comp_method == 0 | comp_method == 1) == FALSE){
+    return('Inputs are not binary 0 or 1. Please check gold_standard and comp_method are both 0/1 binary.')
+  }
+
+  if(any(is.na(gold_standard) == TRUE)){
+    return('gold_standard include NA values. Please replace with 0 or intensities.')
+  }
+  if(any(is.na(comp_method) == TRUE)){
+    return('comp_method include NA values. Please replace with 0 or intensities.')
+  }
+
   # Calculate DSC for vector inputs
   if(is.numeric(gold_standard) & is.numeric(comp_method) & (length(gold_standard) == length(comp_method))){
     dsc = (2*sum(gold_standard * comp_method))/(sum(gold_standard) + sum(comp_method))
     # Calculate DSC for images after checking both are nifti and the same dimension
   } else if(class(gold_standard)[1] == 'nifti' & class(comp_method)[1] == 'nifti' & all(dim(gold_standard) == dim(comp_method))){
     dsc = (2*sum(gold_standard * comp_method))/(sum(gold_standard) + sum(comp_method))
-    # If these are not true then classes or dimensions  
+    # If these are not true then classes or dimensions
   } else{
     return('Inputs do not match. Please check both inputs are niftis or vectors. Also check niftis or vectors are of the same length or dimension')
   }
-  
+
   return(dsc)
 }
