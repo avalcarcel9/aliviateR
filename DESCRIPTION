@@ -22,7 +22,7 @@ Imports:
     grDevices,
     magrittr (>= 1.5),
     neurobase (>= 1.27.6),
-    oro.nifti(>= 0.9.11),
+    oro.nifti (>= 0.9.1),
     stringr (>= 1.3.0),
     tibble (>= 2.0.0),
     usethis (>= 0.0.0.9000),
