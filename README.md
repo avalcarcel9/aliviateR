@@ -195,6 +195,24 @@ Simply provide the `path` to the folder that houses all of the saved
 objects and the `pattern` of the files you wish to import. If there is
 no pattern and you’d simply like to import everything set to `NULL`.
 
+Whenever writing a paper or presenting my work I normally need to take
+screen shots of the nifti objects. Typically this is a single slice
+represented across a number of different images. For example, a single
+subjects axial slice from T1, T2, PD, and FLAIR images. Loading these
+into a viewer and individually saving or taking screen shots can be
+cumbersome. Instead, I wrote a function that will save slices of images
+specified by the user across a number of image inputs.
+
+``` r
+save_slices(imgs,
+            outfiles,
+            format = c('png', 'pdf'),
+            width = NULL,
+            height = NULL,
+            units = NULL,
+            ...)
+```
+
 For a full example of my flow see the
 [vignette](https://github.com/avalcarcel9/aliviateR/blob/master/vignettes/vignette.Rmd)
 for an example.

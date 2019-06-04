@@ -241,3 +241,35 @@ load_mrdata(path,
 ```
 
 Simply provide the `path` to the folder that houses all of the saved objects and the `pattern` of the files you wish to import. If there is no pattern and you'd simply like to import everything set to `NULL`.
+
+Whenever writing a paper or presenting my work I normally need to take screen shots of the nifti objects. Typically this is a single slice represented across a number of different images. For example, a single subjects axial slice from T1, T2, PD, and FLAIR images. Loading these into a viewer and individually saving or taking screen shots can be cumbersome. Instead, I wrote a function that will save slices of images specified by the user across a number of image inputs.
+
+```{r, eval = FALSE}
+save_slices(imgs,
+            outfiles,
+            format = c('png', 'pdf'),
+            width = NULL,
+            height = NULL,
+            units = NULL,
+            ...)
+```
+
+A simple example of using this function is provided below:
+
+```{r, eval = FALSE}
+# `rtapas` has example probability map data available for use
+# Load and create a list of 2 example NIFTI objects from `rtapas`
+images = list(rtapas::pmap1, rtapas::pmap2)
+save_slices(imgs = images,
+            outfiles = c('/Users/alval/Desktop/test_pmap1', '/Users/alval/Desktop/test_pmap2.png'), # Change to a file path where you would like to save the example images. Note we can include or exclude the file extension.
+            format = 'png',
+            width = 480,
+            height = 480,
+            units = 'px',
+            z = 2,
+            col = oro.nifti::hotmetal(70),
+            plane = 'axial',
+            plot.type = 'single')
+```
+
+Some common adaptions include providing filepaths to images rather than the list of local `nifti` images. Changing the colors or changing the plane. See `oro.nifti::image()` for more information.
