@@ -2,6 +2,7 @@
 #' @description Loads multiple .RData and .rda files
 #' @param path The path to the folder where the multiple files are stored
 #' @param pattern The pattern of the files inside the folder to import
+#' @param bind_rows By default is set to TRUE. Will bind rows of the multiple data frames supplied by the path.
 #' @importFrom stringr str_detect
 #' @importFrom dplyr bind_rows
 #' @export

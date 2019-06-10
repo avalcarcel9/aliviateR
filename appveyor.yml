@@ -7,6 +7,18 @@ init:
         Invoke-WebRequest http://raw.github.com/krlmlr/r-appveyor/master/scripts/appveyor-tool.ps1 -OutFile "..\appveyor-tool.ps1"
         Import-Module '..\appveyor-tool.ps1'
 
+# Added this because appveyor was failing with tibble.
+# Probably temporary because CRAN doesn't have binary package
+# https://github.com/r-lib/ps/issues/52
+environment:
+  global:
+    R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
+    WARNINGS_ARE_ERRORS: 0
+    USE_RTOOLS: true
+    R_CHECK_INSTALL_ARGS: "--install-args=--build --no-multiarch "
+  matrix:
+    - R_VERSION: 3.5.0
+
 install:
   ps: Bootstrap
 
