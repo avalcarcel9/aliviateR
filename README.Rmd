@@ -134,10 +134,11 @@ Often, I am importing many `.RData` or `.rda` objects that are saved in a single
 
 ```{r, eval = FALSE}
 load_mrdata(path, 
-            pattern)
+            pattern,
+            bind_rows = TRUE)
 ```
 
-Simply provide the `path` to the folder that houses all of the saved objects and the `pattern` of the files you wish to import. If there is no pattern and you'd simply like to import everything set to `NULL`.
+Simply provide the `path` to the folder that houses all of the saved objects and the `pattern` of the files you wish to import. If there is no pattern and you'd simply like to import everything set to `NULL`. The `bind_rows` option will bind the rows of objects supplied from path.
 
 Whenever writing a paper or presenting my work I normally need to take screen shots of the nifti objects. Typically this is a single slice represented across a number of different images. For example, a single subjects axial slice from T1, T2, PD, and FLAIR images. Loading these into a viewer and individually saving or taking screen shots can be cumbersome. Instead, I wrote a function that will save slices of images specified by the user across a number of image inputs.
 
