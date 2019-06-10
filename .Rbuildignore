@@ -1,3 +1,4 @@
+^\.travis\.yml$
 ^inst/icon\.png$
 ^inst/sticker\.R$
 ^inst/sticker\.png$
