@@ -8,20 +8,26 @@ multiple_filepaths(path, pattern = NULL, full.names = TRUE,
   sort = TRUE, id_pattern = "[0-9][0-9][0-9]+")
 }
 \arguments{
-\item{path}{A vector of paths for which to obtain the filepaths to specific files}
+\item{path}{A vector of paths for which to obtain the filepaths to specific
+files}
 
 \item{pattern}{NULL by default does not supply a pattern of files to obtain.
-If a pattern is required input a vector of patterns that align with the paths supplied.}
+If a pattern is required input a vector of patterns that align with the
+paths supplied.}
 
-\item{full.names}{TRUE by default. Argument passed to list.files(). Returns full path of file.}
+\item{full.names}{TRUE by default. Argument passed to list.files(). Returns
+full path of file.}
 
-\item{sort}{TRUE by default will sort the filepaths by a subject ID contained inside of the path. FALSE will not sort.}
+\item{sort}{TRUE by default will sort the filepaths by a subject ID contained
+inside of the path. FALSE will not sort.}
 
-\item{id_pattern}{By default is a 3 digit pattern. Searches for the pattern indicated as a subject ID.}
+\item{id_pattern}{By default is a 3 digit pattern. Searches for the pattern
+indicated as a subject ID.}
 }
 \value{
 A tibble of filepaths.
 }
 \description{
-Obtain a tibble of filepaths by supplying directory paths and pattern (if necessary) of files.
+Obtain a tibble of filepaths by supplying directory paths and
+  pattern (if necessary) of files.
 }

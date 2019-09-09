@@ -38,12 +38,13 @@ default), `plane` is the plane of acquisition to be displayed (choices are
 'axial', 'coronal', 'sagittal').}
 }
 \value{
-A list of simple output from [grDevices::png()] or [grDevices::pdf()]. Image slice(s) are
-saved to `outfiles`.
+A list of simple output from [grDevices::png()] or
+  [grDevices::pdf()]. Image slice(s) are saved to `outfiles`.
 }
 \description{
-Save the same slice across a set of images provided. Saves images in png or PDF formats.
-Others can be added upon request through a GitHub issue. Wraps [oro.nifti::image()].
+Save the same slice across a set of images provided. Saves
+  images in png or PDF formats. Others can be added upon request through a
+  GitHub issue. Wraps [oro.nifti::image()].
 }
 \examples{
 \dontrun{

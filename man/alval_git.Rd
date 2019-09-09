@@ -9,14 +9,16 @@ alval_git(pkg_path = NULL, credentials = NULL)
 \arguments{
 \item{pkg_path}{Path where you will be storing your package}
 
-\item{credentials}{NULL by default. Option 'alval' is specifically for me. If other
-specify credentials to be passed to devtools::use_github(credentials = ).}
+\item{credentials}{NULL by default. Option 'alval' is specifically for me. If
+other specify credentials to be passed to devtools::use_github(credentials
+= ).}
 }
 \value{
 No objected returned. Check your GitHub to see if the package repo was properly configured.
 }
 \description{
-Initializes GitHub repo, adds, commits, and pushes package to GitHub
+Initializes GitHub repo, adds, commits, and pushes package to
+  GitHub
 }
 \examples{
 \dontrun{

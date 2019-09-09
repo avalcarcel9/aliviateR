@@ -2,22 +2,29 @@
 % Please edit documentation in R/dsc_mult_thresholds.R
 \name{dsc_mult_thresholds}
 \alias{dsc_mult_thresholds}
-\title{Calculate Sørensen–Dice index for a probability map using multiple thresholds}
+\title{Calculate Sørensen–Dice index for a probability map using multiple
+  thresholds}
 \usage{
 dsc_mult_thresholds(gold_standard, prob_map, thresholds, mask = NULL)
 }
 \arguments{
-\item{gold_standard}{A vector or nifti of the gold standard to compare using Sørensen–Dice. Class must match prob_map.}
+\item{gold_standard}{A vector or nifti of the gold standard to compare using
+Sørensen–Dice. Class must match prob_map.}
 
-\item{prob_map}{A vector or nifti of the probability map to compare at multiple thresholds with the gold_standard. Class must match gold_standard.}
+\item{prob_map}{A vector or nifti of the probability map to compare at
+multiple thresholds with the gold_standard. Class must match gold_standard.}
 
 \item{thresholds}{A vector of thresholds to use on the probability map}
 
-\item{mask}{NULL by default assumes that gold_standard and prob_map are already vectors. If niftis are supplied then a mask must be provided to vectorize the gold_standard and prob_map.}
+\item{mask}{NULL by default assumes that gold_standard and prob_map are
+already vectors. If niftis are supplied then a mask must be provided to
+vectorize the gold_standard and prob_map.}
 }
 \value{
-A tibble with a column of the user-defined thresholds (threshold) and the Sørensen–Dice (dsc) values is returned.
+A tibble with a column of the user-defined thresholds (threshold) and
+  the Sørensen–Dice (dsc) values is returned.
 }
 \description{
-Calculates Sørensen–Dice index for a probability map using multiple thresholds
+Calculates Sørensen–Dice index for a probability map using
+  multiple thresholds
 }

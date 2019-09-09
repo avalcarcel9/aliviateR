@@ -9,15 +9,17 @@ sort_filepaths(filepaths, id_pattern = "[0-9][0-9][0-9]+")
 \arguments{
 \item{filepaths}{A data.frame or tibble of filepaths with an ID contained}
 
-\item{id_pattern}{By default is a 3 digit pattern. Searches for the pattern indicated as a subject ID.}
+\item{id_pattern}{By default is a 3 digit pattern. Searches for the pattern
+indicated as a subject ID.}
 }
 \value{
 A sorted tibble of filepaths with an ID column
 }
 \description{
 Sorts a data.frame or tibble of filepaths.
-In the filepaths, it is assumed you have an ID that is at least 3 digits long.
-The function will sort each column in the input, check each row of IDs matches, and add a new column of the ID.
+In the filepaths, it is assumed you have an ID that is at least 3 digits
+long. The function will sort each column in the input, check each row of IDs
+matches, and add a new column of the ID.
 }
 \examples{
 \dontrun{

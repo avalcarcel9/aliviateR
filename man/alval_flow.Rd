@@ -37,11 +37,13 @@ through usethis}
 \item{role}{Default is author and creator}
 }
 \value{
-Folder in specified R path with R package related objects. Vignette may be opened if specified.
+Folder in specified R path with R package related objects. Vignette
+  may be opened if specified.
 }
 \description{
-Generates an R package according to Ali Valcarcel's workflow. This essentially wraps the
-usethis package functions that I always use when creating an R package
+Generates an R package according to Ali Valcarcel's workflow.
+  This essentially wraps the usethis package functions that I always use when
+  creating an R package
 }
 \examples{
 \dontrun{

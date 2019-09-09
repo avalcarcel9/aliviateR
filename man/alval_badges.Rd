@@ -12,18 +12,24 @@ alval_badges(pkg_path = NULL, gh_username = NULL, interactive = TRUE,
 
 \item{gh_username}{Your GitHub username}
 
-\item{interactive}{TRUE by default opens web browse to the continuous integration site to activate. FALSE will not open browser.}
+\item{interactive}{TRUE by default opens web browse to the continuous
+integration site to activate. FALSE will not open browser.}
 
-\item{travis}{TRUE by default adds .travis.yml to the top level directory and opens travis for configuration}
+\item{travis}{TRUE by default adds .travis.yml to the top level directory and
+opens travis for configuration}
 
-\item{coverage}{TRUE by default adds coverage reports to a package that is in Travis CI}
+\item{coverage}{TRUE by default adds coverage reports to a package that is in
+Travis CI}
 
-\item{appveyor}{TRUE by default adds a basic appveyor.yml to the top level of a package and opens AppVeyor CI.}
+\item{appveyor}{TRUE by default adds a basic appveyor.yml to the top level of
+a package and opens AppVeyor CI.}
 
-\item{cran}{TRUE by default adds cran badge for cran version or not on cran if not on cran}
+\item{cran}{TRUE by default adds cran badge for cran version or not on cran
+if not on cran}
 }
 \value{
-Tibble with badges based on user inputs. If not input FALSE will be returned.
+Tibble with badges based on user inputs. If not input FALSE will be
+  returned.
 }
 \description{
 Add continuous integration services to the R package. Additionally provide
