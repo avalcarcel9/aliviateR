@@ -1,6 +1,7 @@
 #' @title Generates an R package
-#' @description Generates an R package according to Ali Valcarcel's workflow. This essentially wraps the
-#' usethis package functions that I always use when creating an R package
+#' @description Generates an R package according to Ali Valcarcel's workflow.
+#'   This essentially wraps the usethis package functions that I always use when
+#'   creating an R package
 #' @param path Path where you will be storing your package
 #' @param pkg_name Name of package you are creating
 #' @param vignette_name NULL or name of vignette file to be generated. NULL by
@@ -17,7 +18,8 @@
 #' @export
 #' @import usethis
 #' @importFrom utils person
-#' @return Folder in specified R path with R package related objects. Vignette may be opened if specified.
+#' @return Folder in specified R path with R package related objects. Vignette
+#'   may be opened if specified.
 #' @examples \dontrun{
 #' alval_flow(path = '/Users/alval/Desktop',
 #' pkg_name = "test",

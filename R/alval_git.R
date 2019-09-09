@@ -1,8 +1,10 @@
 #' @title Creates package repo on GitHub
-#' @description Initializes GitHub repo, adds, commits, and pushes package to GitHub
+#' @description Initializes GitHub repo, adds, commits, and pushes package to
+#'   GitHub
 #' @param pkg_path Path where you will be storing your package
-#' @param credentials NULL by default. Option 'alval' is specifically for me. If other
-#' specify credentials to be passed to devtools::use_github(credentials = ).
+#' @param credentials NULL by default. Option 'alval' is specifically for me. If
+#'   other specify credentials to be passed to devtools::use_github(credentials
+#'   = ).
 #' @export
 #' @importFrom usethis use_git use_github
 #' @importFrom git2r cred_ssh_key

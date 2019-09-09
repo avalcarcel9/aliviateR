@@ -1,12 +1,19 @@
-#' @title Calculate Sørensen–Dice index for a probability map using multiple thresholds
-#' @description Calculates Sørensen–Dice index for a probability map using multiple thresholds
-#' @param gold_standard A vector or nifti of the gold standard to compare using Sørensen–Dice. Class must match prob_map.
-#' @param prob_map A vector or nifti of the probability map to compare at multiple thresholds with the gold_standard. Class must match gold_standard.
+#' @title Calculate Sørensen–Dice index for a probability map using multiple
+#'   thresholds
+#' @description Calculates Sørensen–Dice index for a probability map using
+#'   multiple thresholds
+#' @param gold_standard A vector or nifti of the gold standard to compare using
+#'   Sørensen–Dice. Class must match prob_map.
+#' @param prob_map A vector or nifti of the probability map to compare at
+#'   multiple thresholds with the gold_standard. Class must match gold_standard.
 #' @param thresholds A vector of thresholds to use on the probability map
-#' @param mask NULL by default assumes that gold_standard and prob_map are already vectors. If niftis are supplied then a mask must be provided to vectorize the gold_standard and prob_map.
+#' @param mask NULL by default assumes that gold_standard and prob_map are
+#'   already vectors. If niftis are supplied then a mask must be provided to
+#'   vectorize the gold_standard and prob_map.
 #' @export
 #' @importFrom tibble tibble
-#' @return A tibble with a column of the user-defined thresholds (threshold) and the Sørensen–Dice (dsc) values is returned.
+#' @return A tibble with a column of the user-defined thresholds (threshold) and
+#'   the Sørensen–Dice (dsc) values is returned.
 
 dsc_mult_thresholds <- function(gold_standard, prob_map, thresholds, mask = NULL){
   # Obtain predicted dsc when 2 vectors are supplied

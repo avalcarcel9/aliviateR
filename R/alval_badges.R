@@ -3,16 +3,22 @@
 #'  badges to your GitHub page to place in the readme.
 #' @param pkg_path The path to your package
 #' @param gh_username Your GitHub username
-#' @param interactive TRUE by default opens web browse to the continuous integration site to activate. FALSE will not open browser.
-#' @param travis TRUE by default adds .travis.yml to the top level directory and opens travis for configuration
-#' @param coverage TRUE by default adds coverage reports to a package that is in Travis CI
-#' @param appveyor TRUE by default adds a basic appveyor.yml to the top level of a package and opens AppVeyor CI.
-#' @param cran TRUE by default adds cran badge for cran version or not on cran if not on cran
+#' @param interactive TRUE by default opens web browse to the continuous
+#'   integration site to activate. FALSE will not open browser.
+#' @param travis TRUE by default adds .travis.yml to the top level directory and
+#'   opens travis for configuration
+#' @param coverage TRUE by default adds coverage reports to a package that is in
+#'   Travis CI
+#' @param appveyor TRUE by default adds a basic appveyor.yml to the top level of
+#'   a package and opens AppVeyor CI.
+#' @param cran TRUE by default adds cran badge for cran version or not on cran
+#'   if not on cran
 #' @export
 #' @importFrom tibble tibble
 #' @importFrom usethis use_travis use_coverage use_appveyor
 #' @importFrom badgecreatr badge_travis badge_codecov badge_cran
-#' @return Tibble with badges based on user inputs. If not input FALSE will be returned.
+#' @return Tibble with badges based on user inputs. If not input FALSE will be
+#'   returned.
 #' @examples \dontrun{
 #' badges = alval_ci(pkg_path = '/Users/alval/Box/Research/aliviateR',
 #'                   gh_username = 'avalcarcel9',

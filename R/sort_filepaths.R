@@ -1,9 +1,11 @@
 #' @title Sorts a data.frame or tibble of filepaths
 #' @description Sorts a data.frame or tibble of filepaths.
-#' In the filepaths, it is assumed you have an ID that is at least 3 digits long.
-#' The function will sort each column in the input, check each row of IDs matches, and add a new column of the ID.
+#' In the filepaths, it is assumed you have an ID that is at least 3 digits
+#' long. The function will sort each column in the input, check each row of IDs
+#' matches, and add a new column of the ID.
 #' @param filepaths A data.frame or tibble of filepaths with an ID contained
-#' @param id_pattern By default is a 3 digit pattern. Searches for the pattern indicated as a subject ID.
+#' @param id_pattern By default is a 3 digit pattern. Searches for the pattern
+#'   indicated as a subject ID.
 #' @export
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_extract

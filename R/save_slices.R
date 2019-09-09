@@ -1,6 +1,7 @@
 #' @title Save the Same Slice Across Images
-#' @description Save the same slice across a set of images provided. Saves images in png or PDF formats.
-#' Others can be added upon request through a GitHub issue. Wraps [oro.nifti::image()].
+#' @description Save the same slice across a set of images provided. Saves
+#'   images in png or PDF formats. Others can be added upon request through a
+#'   GitHub issue. Wraps [oro.nifti::image()].
 #' @param imgs A `character` `vector` of file paths to the image(s) or local
 #'   `list` of `nifti` class objects.
 #' @param outfiles A `character` `vector` of file paths corresponding to the
@@ -28,8 +29,8 @@
 #' @importFrom neurobase check_nifti
 #' @importFrom oro.nifti image
 #' @importFrom stringr str_detect
-#' @return A list of simple output from [grDevices::png()] or [grDevices::pdf()]. Image slice(s) are
-#' saved to `outfiles`.
+#' @return A list of simple output from [grDevices::png()] or
+#'   [grDevices::pdf()]. Image slice(s) are saved to `outfiles`.
 #' @export
 #'
 #' @examples \dontrun{
