@@ -3,7 +3,7 @@
 #' @param path A vector of paths for which to obtain the filepaths to specific files
 #' @param pattern NULL by default does not supply a pattern of files to obtain.
 #' If a pattern is required input a vector of patterns that align with the paths supplied.
-#' @param full.names TRUE by default. Arguement passed to list.files(). Returns full path of file.
+#' @param full.names TRUE by default. Argument passed to list.files(). Returns full path of file.
 #' @param sort TRUE by default will sort the filepaths by a subject ID contained inside of the path. FALSE will not sort.
 #' @param id_pattern By default is a 3 digit pattern. Searches for the pattern indicated as a subject ID.
 #' @export

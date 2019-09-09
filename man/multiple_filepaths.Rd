@@ -13,7 +13,7 @@ multiple_filepaths(path, pattern = NULL, full.names = TRUE,
 \item{pattern}{NULL by default does not supply a pattern of files to obtain.
 If a pattern is required input a vector of patterns that align with the paths supplied.}
 
-\item{full.names}{TRUE by default. Arguement passed to list.files(). Returns full path of file.}
+\item{full.names}{TRUE by default. Argument passed to list.files(). Returns full path of file.}
 
 \item{sort}{TRUE by default will sort the filepaths by a subject ID contained inside of the path. FALSE will not sort.}
 

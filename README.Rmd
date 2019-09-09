@@ -62,7 +62,7 @@ Feel free to change the `firstname`, `lastname`, and `email` fields and use on y
 
 The next function `aliviateR::alval_git` initializes a GitHub repo for your package, adds, commits, and pushes the package contents to GitHub. __This requires that GitHub is properly configured on your machine and with RStudio.__ For more information on configuration see [RStudio Support](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN), [R packages by Hadley Wickham](http://r-pkgs.had.co.nz/git.html), and [Blog](http://happygitwithr.com/rstudio-git-github.html).
 
-At the minium you need your GitHub username and email set up as well as a token set up in your .Renviron. R also has to know where your ssh keys are. You can check if this is done already by running:
+At the minimum you need your GitHub username and email set up as well as a token set up in your .Renviron. R also has to know where your ssh keys are. You can check if this is done already by running:
 
 ```{r, eval = FALSE}
 usethis::use_git_config()
@@ -77,7 +77,7 @@ alval_git(pkg_path = NULL,
           credentials = NULL)
 ```
 
-You'll need to specify the path to your package. By default the credentials are NULL. This arguement is passed to `devtools::usethis::use_git()` so check our their documentation for more info though `NULL` should still run. I set it to something special `credentials = alval` for a specialized path to my credentials. The other option is to input your own if `NULL` doesn't seem to work. After you run this, check that the package folder is set up as a repo on your GitHub.
+You'll need to specify the path to your package. By default the credentials are NULL. This argument is passed to `devtools::usethis::use_git()` so check our their documentation for more info though `NULL` should still run. I set it to something special `credentials = alval` for a specialized path to my credentials. The other option is to input your own if `NULL` doesn't seem to work. After you run this, check that the package folder is set up as a repo on your GitHub.
 
 The `aliviateR::alval_badges()` function adds continuous integration and coverage checks. Additionally, it returns the badges you can add to your readme.
 
@@ -91,9 +91,9 @@ alval_badges(pkg_path = NULL,
              cran = TRUE)
 ```
 
-You'll specify the path to your package and GitHub username. Running this will prompt many of the continous integration sites to open (if `interactive = TRUE`) and you can configure the setting options interactively. If you have already done this and just need the badges then set `interactive = FALSE`. You only need to to copy and paste the badges you specified into your readme. 
+You'll specify the path to your package and GitHub username. Running this will prompt many of the continuous integration sites to open (if `interactive = TRUE`) and you can configure the setting options interactively. If you have already done this and just need the badges then set `interactive = FALSE`. You only need to to copy and paste the badges you specified into your readme. 
 
-The `aliviateR::sort_filepaths()` function is a little different than the previous functions. It doesn't help with building packages but is useful in everday research. This function should be used when you would like to sort a data.frame or tibble of filepaths by an ID contained inside the filepath. The ID by default must larger than 3 numbers. If you want to provide a specific ID pattern use `id_pattern`. This is passed to `stringr::str_extract` so the pattern format should be accepted by that function. A tibble will be returned with an additional `id` column.
+The `aliviateR::sort_filepaths()` function is a little different than the previous functions. It doesn't help with building packages but is useful in everyday research. This function should be used when you would like to sort a data.frame or tibble of file paths by an ID contained inside the file path. The ID by default must larger than 3 numbers. If you want to provide a specific ID pattern use `id_pattern`. This is passed to `stringr::str_extract` so the pattern format should be accepted by that function. A tibble will be returned with an additional `id` column.
 
 
 ```{r, eval = FALSE}

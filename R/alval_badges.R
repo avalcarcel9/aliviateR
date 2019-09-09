@@ -7,7 +7,7 @@
 #' @param travis TRUE by default adds .travis.yml to the top level directory and opens travis for configuration
 #' @param coverage TRUE by default adds coverage reports to a package that is in Travis CI
 #' @param appveyor TRUE by default adds a basic appveyor.yml to the top level of a package and opens AppVeyor CI.
-#' @param cran TRUE by default adds cran badge for cran versin or not on cran if not on cran
+#' @param cran TRUE by default adds cran badge for cran version or not on cran if not on cran
 #' @export
 #' @importFrom tibble tibble
 #' @importFrom usethis use_travis use_coverage use_appveyor

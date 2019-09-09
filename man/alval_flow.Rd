@@ -16,9 +16,11 @@ alval_flow(path = NULL, pkg_name = NULL, vignette_name = NULL,
 
 \item{pkg_name}{Name of package you are creating}
 
-\item{vignette_name}{NULL or name of vignette file to be generated. NULL by default will not generate a vignette or associated files}
+\item{vignette_name}{NULL or name of vignette file to be generated. NULL by
+default will not generate a vignette or associated files}
 
-\item{testing}{FALSE by default. Logical for building testing material through usethis}
+\item{testing}{FALSE by default. Logical for building testing material
+through usethis}
 
 \item{data}{TRUE by default. Logical for adding data to package structure.}
 
@@ -26,7 +28,7 @@ alval_flow(path = NULL, pkg_name = NULL, vignette_name = NULL,
 
 \item{description}{Description to be put in description}
 
-\item{firstname}{First name. Defaults to my firt name}
+\item{firstname}{First name. Defaults to my first name}
 
 \item{lastname}{Last name. Defaults to my last name}
 

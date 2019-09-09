@@ -27,7 +27,8 @@ Imports:
     tibble (>= 2.0.0),
     usethis (>= 0.0.0.9000),
     utils
-Suggests: 
+Suggests:
+    spelling, 
     covr,
     knitr,
     rmarkdown,
@@ -36,3 +37,4 @@ Remotes:
     RMHogervorst/badgecreatr
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr
+Language: en-US

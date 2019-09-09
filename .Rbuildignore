@@ -4,3 +4,6 @@
 ^inst/sticker\.png$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^README\.Rmd$
+^appveyor\.yml$
+^codecov\.yml$

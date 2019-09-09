@@ -71,7 +71,7 @@ Support](https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control
 [R packages by Hadley Wickham](http://r-pkgs.had.co.nz/git.html), and
 [Blog](http://happygitwithr.com/rstudio-git-github.html).
 
-At the minium you need your GitHub username and email set up as well as
+At the minimum you need your GitHub username and email set up as well as
 a token set up in your .Renviron. R also has to know where your ssh keys
 are. You can check if this is done already by running:
 
@@ -89,7 +89,7 @@ alval_git(pkg_path = NULL,
 ```
 
 You’ll need to specify the path to your package. By default the
-credentials are NULL. This arguement is passed to
+credentials are NULL. This argument is passed to
 `devtools::usethis::use_git()` so check our their documentation for more
 info though `NULL` should still run. I set it to something special
 `credentials = alval` for a specialized path to my credentials. The
@@ -112,7 +112,7 @@ alval_badges(pkg_path = NULL,
 ```
 
 You’ll specify the path to your package and GitHub username. Running
-this will prompt many of the continous integration sites to open (if
+this will prompt many of the continuous integration sites to open (if
 `interactive = TRUE`) and you can configure the setting options
 interactively. If you have already done this and just need the badges
 then set `interactive = FALSE`. You only need to to copy and paste the
@@ -120,9 +120,9 @@ badges you specified into your readme.
 
 The `aliviateR::sort_filepaths()` function is a little different than
 the previous functions. It doesn’t help with building packages but is
-useful in everday research. This function should be used when you would
-like to sort a data.frame or tibble of filepaths by an ID contained
-inside the filepath. The ID by default must larger than 3 numbers. If
+useful in everyday research. This function should be used when you would
+like to sort a data.frame or tibble of file paths by an ID contained
+inside the file path. The ID by default must larger than 3 numbers. If
 you want to provide a specific ID pattern use `id_pattern`. This is
 passed to `stringr::str_extract` so the pattern format should be
 accepted by that function. A tibble will be returned with an additional
@@ -188,12 +188,14 @@ the same and you planning to bind them.
 
 ``` r
 load_mrdata(path, 
-            pattern)
+            pattern,
+            bind_rows = TRUE)
 ```
 
 Simply provide the `path` to the folder that houses all of the saved
 objects and the `pattern` of the files you wish to import. If there is
-no pattern and you’d simply like to import everything set to `NULL`.
+no pattern and you’d simply like to import everything set to `NULL`. The
+`bind_rows` option will bind the rows of objects supplied from path.
 
 Whenever writing a paper or presenting my work I normally need to take
 screen shots of the nifti objects. Typically this is a single slice

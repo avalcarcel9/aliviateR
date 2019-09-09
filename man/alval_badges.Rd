@@ -20,7 +20,7 @@ alval_badges(pkg_path = NULL, gh_username = NULL, interactive = TRUE,
 
 \item{appveyor}{TRUE by default adds a basic appveyor.yml to the top level of a package and opens AppVeyor CI.}
 
-\item{cran}{TRUE by default adds cran badge for cran versin or not on cran if not on cran}
+\item{cran}{TRUE by default adds cran badge for cran version or not on cran if not on cran}
 }
 \value{
 Tibble with badges based on user inputs. If not input FALSE will be returned.

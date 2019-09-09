@@ -3,12 +3,14 @@
 #' usethis package functions that I always use when creating an R package
 #' @param path Path where you will be storing your package
 #' @param pkg_name Name of package you are creating
-#' @param vignette_name NULL or name of vignette file to be generated. NULL by default will not generate a vignette or associated files
-#' @param testing FALSE by default. Logical for building testing material through usethis
+#' @param vignette_name NULL or name of vignette file to be generated. NULL by
+#'   default will not generate a vignette or associated files
+#' @param testing FALSE by default. Logical for building testing material
+#'   through usethis
 #' @param data TRUE by default. Logical for adding data to package structure.
 #' @param title Package title to be put in description
 #' @param description Description to be put in description
-#' @param firstname First name. Defaults to my firt name
+#' @param firstname First name. Defaults to my first name
 #' @param lastname Last name. Defaults to my last name
 #' @param email Email. Defaults to my email.
 #' @param role Default is author and creator
