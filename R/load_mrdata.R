@@ -4,6 +4,7 @@
 #' @param pattern The pattern of the files inside the folder to import
 #' @param bind_rows By default is set to TRUE. Will bind rows of the multiple
 #'   data frames supplied by the path.
+#' @importFrom purrr map
 #' @importFrom stringr str_detect
 #' @importFrom dplyr bind_rows
 #' @export
@@ -17,7 +18,7 @@ load_mrdata <- function(path, pattern, bind_rows = TRUE){
   }
   # Are files all .rds
   else if(all(stringr::str_detect(files, '.rds')) == TRUE){
-    data = sapply(files, function(x) mget(readRDS(x)), simplify = TRUE)
+    data = purrr::map(list.files(path = 'nhoods', pattern = 'covariates', full.names = TRUE), readRDS)
   }
   # If not .RData or .rds stop the function
   else if(all(stringr::str_detect(files, '.RData')) == FALSE | all(stringr::str_detect(files, '.rds')) == FALSE){
