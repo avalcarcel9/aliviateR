@@ -4,8 +4,15 @@
 \alias{alval_badges}
 \title{Add Continuous Integration Badges}
 \usage{
-alval_badges(pkg_path = NULL, gh_username = NULL, interactive = TRUE,
-  travis = TRUE, coverage = TRUE, appveyor = TRUE, cran = TRUE)
+alval_badges(
+  pkg_path = NULL,
+  gh_username = NULL,
+  interactive = TRUE,
+  travis = TRUE,
+  coverage = TRUE,
+  appveyor = TRUE,
+  cran = TRUE
+)
 }
 \arguments{
 \item{pkg_path}{The path to your package}

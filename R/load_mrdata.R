@@ -18,7 +18,7 @@ load_mrdata <- function(path, pattern, bind_rows = TRUE){
   }
   # Are files all .rds
   else if(all(stringr::str_detect(files, '.rds')) == TRUE){
-    data = purrr::map(list.files(path = 'nhoods', pattern = 'covariates', full.names = TRUE), readRDS)
+    data = purrr::map(list.files(path = path, pattern = pattern, full.names = TRUE), readRDS)
   }
   # If not .RData or .rds stop the function
   else if(all(stringr::str_detect(files, '.RData')) == FALSE | all(stringr::str_detect(files, '.rds')) == FALSE){

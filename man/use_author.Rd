@@ -4,8 +4,13 @@
 \alias{use_author}
 \title{Create or modify the `Authors@R` field in the DESCRIPTION file}
 \usage{
-use_author(given = "Jane", family = "Doe", role = "aut",
-  email = "jane@example.com", comment = c(ORCID = "YOUR-ORCID-ID"))
+use_author(
+  given = "Jane",
+  family = "Doe",
+  role = "aut",
+  email = "jane@example.com",
+  comment = c(ORCID = "YOUR-ORCID-ID")
+)
 }
 \arguments{
 \item{given}{a character string with the given (first) name of the author.}

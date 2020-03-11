@@ -4,12 +4,19 @@
 \alias{alval_flow}
 \title{Generates an R package}
 \usage{
-alval_flow(path = NULL, pkg_name = NULL, vignette_name = NULL,
-  testing = TRUE, data = TRUE,
+alval_flow(
+  path = NULL,
+  pkg_name = NULL,
+  vignette_name = NULL,
+  testing = TRUE,
+  data = TRUE,
   title = "What the Package Does (One Line, Title Case)",
   description = "What the package does (one paragraph).",
-  firstname = "Alessandra", lastname = "Valcarcel",
-  email = "alval@pennmedicine.com", role = c("aut", "cre"))
+  firstname = "Alessandra",
+  lastname = "Valcarcel",
+  email = "alval@pennmedicine.com",
+  role = c("aut", "cre")
+)
 }
 \arguments{
 \item{path}{Path where you will be storing your package}

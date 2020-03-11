@@ -4,8 +4,15 @@
 \alias{save_slices}
 \title{Save the Same Slice Across Images}
 \usage{
-save_slices(imgs, outfiles, format = c("png", "pdf"), width = NULL,
-  height = NULL, units = NULL, ...)
+save_slices(
+  imgs,
+  outfiles,
+  format = c("png", "pdf"),
+  width = NULL,
+  height = NULL,
+  units = NULL,
+  ...
+)
 }
 \arguments{
 \item{imgs}{A `character` `vector` of file paths to the image(s) or local
