@@ -9,7 +9,7 @@
 #' @export
 #' @importFrom magrittr %>%
 #' @importFrom stringr str_extract
-#' @importFrom tibble tibble as_tibble is.tibble
+#' @importFrom tibble tibble as_tibble is_tibble
 #' @importFrom dplyr mutate mutate_all funs
 #' @return A sorted tibble of filepaths with an ID column
 #'@examples
@@ -30,7 +30,7 @@ sort_filepaths <- function(filepaths, id_pattern = "[0-9][0-9][0-9]+"){
   extract_number <- function(column){stringr::str_extract(column, id_pattern)}
 
   # check if input is a tibble
-  if(tibble::is.tibble(filepaths)==FALSE){
+  if(tibble::is_tibble(filepaths)==FALSE){
     # if not make a tibble and sort
     filepaths = tibble::as_tibble(filepaths)
     filepaths = dplyr::mutate_all(filepaths, sort)
